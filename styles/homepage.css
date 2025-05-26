@@ -1,15 +1,8 @@
 body {
-    font-family: sans-serif; /* Use a common sans-serif font */
     margin: 0;
     padding: 0;
     background-color: #f8f8f8; /* Light background */
     color: #333;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto; /* Center the container */
 }
 
 /* Header Styling */
@@ -18,17 +11,6 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.top-bar {
-    background-color: #eee; /* Lighter grey */
-    padding: 5px 0;
-    font-size: 0.9em;
-}
-
-.top-bar .container {
-    display: flex;
-    justify-content: flex-end; /* Align links to the right */
-    gap: 15px; /* Space between links */
-}
 
 .top-link {
     text-decoration: none;

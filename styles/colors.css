@@ -1,0 +1,9 @@
+:root {
+    --primary-blue: #6EA3CC;
+    --hover-light: #FFDFDF;
+}
+
+.top-bar a{
+    color:white;
+    padding: 10px 0;
+}
