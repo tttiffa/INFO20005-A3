@@ -44,7 +44,8 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 10px; /* Space between items */
+    gap: 10px; 
+    /* Space between items */
 }
 
 .logo {
