@@ -1,0 +1,65 @@
+@media (min-width: 1369px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1367px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 391px) {
+    .top-link {
+        font-size: 1rem;
+    }
+    .top-link span{
+        display: none;
+    }
+
+    .map-link{
+        display: none;
+    }
+    
+    .top-link span{
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+
+    .logo {
+        order: 1;
+        height: 30px;
+    }
+
+    .main-nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .menu-icon{
+        order: 0;
+    }
+    
+    .log-link{
+        order: 2;
+    }
+
+    .heart-link{
+        order: 3;
+    }
+
+    .cart-link{
+        order: 4;
+    }
+}
