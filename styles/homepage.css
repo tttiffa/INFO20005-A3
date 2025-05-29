@@ -18,6 +18,29 @@ header {
     color: #555;
 }
 
+.promo-banner {
+    background-color: var(--light-blue);
+    padding: 10px 20px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+}
+
+.promo-text {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 2px 6px;
+}
+
 .mid-bar {
     padding: 15px 0;
 }
