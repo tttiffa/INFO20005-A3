@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     padding: 0;
-    background-color: #f8f8f8; /* Light background */
+    background-color: var(--primary-pink); /* Light background */
     color: hsl(0, 0%, 20%);
 }
 
@@ -113,9 +113,7 @@ border: none;
     background: #ccc;
 }
 
-
 .main-nav {
-    background-color: var(--primary-pink);
     border-top: 1px solid #eee;
     width: 100%;
 }
@@ -206,41 +204,44 @@ border: none;
 
 /* Category Tiles */
 .category-tiles {
-    padding: 40px 0;
-    background-color: #eef; /* Light blue background */
+    padding: 2.5rem 0;
+    text-align: center;
 }
 
 .category-tiles .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .category-tile {
-    text-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 30%; /* Adjust as needed */
-    min-width: 200px; /* Minimum width */
+    background-color: var(--tile-blue); 
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 10px rgba(33, 17, 17, 0.1); 
+    width: calc(33.333% - 1rem); 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    padding-bottom: 25px; 
 }
 
 .category-tile img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 80%; 
+    height: auto; 
+    display: block; 
+    padding-top: 1rem;
 }
 
 .category-tile p {
-    padding: 10px;
-    margin: 0;
-    font-weight: bold;
-}
-
-.category-tile i {
-    color: gold; /* Or your preferred star color */
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: white;
+    margin-top: 20px; 
+    padding: 0 10px; 
 }
 
 /* Shop by Brand */
@@ -426,35 +427,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-/* Responsive Adjustments (Basic) */
-@media (max-width: 768px) {
-    .mid-bar .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .search-bar {
-        width: 100%;
-        max-width: none;
-    }
-
-    .main-nav .container ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main-nav .container li {
-        margin: 5px 0;
-    }
-
-    .category-tile {
-        width: 80%; /* Make tiles wider on small screens */
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 15px;
-    }
 }

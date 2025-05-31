@@ -21,6 +21,13 @@
 
 }
 
+@media (max-width: 1024px) {
+    .category-tile {
+        width: calc(50% - 1rem);
+    }
+}
+
+
 @media (max-width: 391px) {
     .top-link {
         font-size: 1rem;
@@ -101,5 +108,15 @@
     .shop-now-btn {
         font-size: 0.9rem;
     }
+
+    .category-tile {
+        width: 50% !important;
+        padding: 1.2rem !important;
+    }
+
+    .category-tile p {
+        font-size: 1.2rem !important;
+    }
 }
+
 
