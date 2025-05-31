@@ -1,0 +1,21 @@
+.shop-now-btn {
+    background-color: #F3B7AD; /* Pink color */
+    color: white;
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 2em;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    white-space: nowrap;
+}
+
+.shop-now-btn:hover {
+    background-color: #EFA194; /* Darker pink on hover */
+}
+
+.shop-now-btn.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

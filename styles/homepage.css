@@ -1,13 +1,13 @@
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: #f8f8f8; /* Light background */
-    color: #333;
+    color: hsl(0, 0%, 20%);
 }
 
 /* Header Styling */
 header {
-    background-color: #fff;
+    background-color: var(--primary-pink);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-weight: 600;
     font-size: 1.2rem;
@@ -115,8 +115,14 @@ border: none;
 
 
 .main-nav {
-    background-color: #fff; /* Assuming white background */
+    background-color: var(--primary-pink);
     border-top: 1px solid #eee;
+    width: 100%;
+}
+
+.main-nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .main-nav .container ul {
@@ -141,67 +147,62 @@ border: none;
 
 /* Hero Section */
 .hero-section {
-    background-image: url('placeholder-hero.jpg'); /* Replace with your image */
-    background-size: cover;
-    background-position: center;
-    color: #fff; /* Text color over image */
-    text-align: center;
-    padding: 80px 20px;
-    position: relative; /* For absolute positioning of arrows */
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--primary-blue);
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.banner-img.active {
+    width: 100%;
+    display: block;
+    opacity: 1;
 }
 
 .hero-section .container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.hero-content {
-    flex-grow: 1; /* Allow content to take space */
-}
-
-.hero-content h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add text shadow for readability */
-}
-
-.shop-now-btn {
-    background-color: #ff69b4; /* Pink color */
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.shop-now-btn:hover {
-    background-color: #ff1493; /* Darker pink on hover */
-}
-
 .arrow {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10; /* Ensure arrows are above content */
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .left-arrow {
-    left: 10px;
+    font-size: 2rem;
 }
 
 .right-arrow {
-    right: 10px;
+    font-size: 2rem;
 }
-
 
 /* Category Tiles */
 .category-tiles {

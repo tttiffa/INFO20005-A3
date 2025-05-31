@@ -14,6 +14,11 @@
     .menu-icon {
         display: none;
     }
+
+    .hero-section {
+        height: 350px;
+    }
+
 }
 
 @media (max-width: 391px) {
@@ -43,6 +48,7 @@
     .promo-banner {
        padding-top: 0.4rem;
        padding-bottom: 0.4rem;
+       height: 20px;
     }
 
     .promo-text {
@@ -70,7 +76,30 @@
         margin: 0 auto;
     }
 
-      .search-bar input {
+    .search-bar input {
         width: 100%;
     }
+
+    .main-nav {
+        display: none;
+    }
+
+    .hero-section {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero-section .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+     .hero-imgs {
+        width: 100%;
+    }
+
+    .shop-now-btn {
+        font-size: 0.9rem;
+    }
 }
+

@@ -76,3 +76,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 /* Close the 'suggestion list' if users click anywhere else*/
+
+/*hero section: shop now button*/
+const banners = document.querySelectorAll('.banner-img');
+const shopBtn = document.querySelector('.shop-now-btn');
+let currentIndex = 0;
+
+function showBanner(index) {
+    banners.forEach((banner, i) => {
+        banner.classList.toggle('active', i === index);
+    });
+
+    const activeBanner = banners[index];
+    const showButton = activeBanner.getAttribute('data-button-visible') === 'true';
+    shopBtn.style.display = showButton ? 'inline-block' : 'none';
+}
+
+function nextBanner() {
+    currentIndex = (currentIndex + 1) % banners.length;
+    showBanner(currentIndex);
+}
+
+function prevBanner() {
+    currentIndex = (currentIndex - 1 + banners.length) % banners.length;
+    showBanner(currentIndex);
+}
+
+document.querySelector('.left-arrow').addEventListener('click', prevBanner);
+document.querySelector('.right-arrow').addEventListener('click', nextBanner);
+showBanner(currentIndex);
