@@ -2,6 +2,7 @@
     .container {
         max-width: 1200px;
     }
+
 }
 
 @media (max-width: 1367px) {
@@ -39,12 +40,13 @@
         height: 30px;
     }
 
-    .main-nav ul li a {
-        font-size: 0.9rem;
+    .promo-banner {
+       padding-top: 0.4rem;
+       padding-bottom: 0.4rem;
     }
 
-    .search-bar input {
-        width: 100%;
+    .promo-text {
+        font-size: 0.8rem;
     }
 
     .menu-icon{
@@ -61,5 +63,14 @@
 
     .cart-link{
         order: 4;
+    }
+
+    .search-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+      .search-bar input {
+        width: 100%;
     }
 }

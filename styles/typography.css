@@ -1,8 +1,16 @@
+.top-bar {
+    font-family: 'Inter'; 
+}
+
 body{
-    font-family: Inter;  /*Use a common inter font*/
+    font-family: 'Inter';  /*Use a common inter font*/
 }
 
 .promo-banner, .promo-banner * {
     font-family: 'Noto Sans', sans-serif;
 }
 /* Everything inside inherits noto sans*/
+
+.boxed-suggestions {
+    font-family: sans-serif;
+}
