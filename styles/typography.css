@@ -23,3 +23,10 @@ body{
 .all-products {
     text-decoration-line: underline;
 }
+
+.shop-by-brand h1 {
+    font-family:'Inter', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: light;
+}
