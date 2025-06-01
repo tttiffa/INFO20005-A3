@@ -19,3 +19,19 @@
     opacity: 0;
     visibility: hidden;
 }
+
+.add-to-cart {
+    margin-top: auto;
+    padding: 0.4rem 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: #F1BCB6;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.add-to-cart:hover {
+    background-color: #f5b7b7;
+}

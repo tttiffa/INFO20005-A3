@@ -7,7 +7,6 @@ body {
 
 /* Header Styling */
 header {
-    background-color: var(--primary-pink);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-weight: 600;
     font-size: 1.2rem;
@@ -113,6 +112,7 @@ border: none;
     background: #ccc;
 }
 
+
 .main-nav {
     border-top: 1px solid #eee;
     width: 100%;
@@ -203,19 +203,16 @@ border: none;
 }
 
 /* Category Tiles */
-.category-tiles {
-    padding: 5em 0;
-    text-align: center;
-}
-
 .category-tiles .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    padding: 4rem 0;
+    text-align: center;
 }
 
 .category-tile {
@@ -226,7 +223,7 @@ border: none;
     display: flex; 
     flex-direction: column;
     align-items: center; 
-    padding-bottom: 25px; 
+    padding-bottom: 20px; 
 }
 
 .category-tile img {
@@ -245,7 +242,7 @@ border: none;
 }
 
 /* Shop by Brand */
-.shop-by-brand {
+.shop-by-brand .container{
     background-color: var(--primary-pink);
     text-align: center;
     padding: 1rem 0.5rem;
@@ -283,67 +280,122 @@ border: none;
     background: none;
     cursor: pointer;
 }
-
 /* New Arrival */
+
 .new-arrival {
-    padding: 40px 0;
-     background-color: #eef; /* Light blue background */
+    background-color: #9BC0DC;
+    padding: 2rem;
 }
 
-.new-arrival .container {
-     text-align: center;
-}
-
-.new-arrival h3 {
-    margin-bottom: 20px;
+.new-arrival h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid */
-    gap: 20px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
 }
 
 .product-item {
-    text-align: left;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
+    padding: 1rem;
+    background-color: var(--sky-blue);
+    border-radius: 0.75rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-item img {
     width: 100%;
-    height: auto;
-    display: block;
+    border-radius: 0.5rem;
 }
 
-.product-item p {
-    padding: 5px 10px;
-    margin: 0;
+.banner-item img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
 }
 
-.product-item .price {
+.product-brand {
+    font-size: 2rem;
+    margin: 0.3rem 0;
     font-weight: bold;
-    color: #ff69b4; /* Pink price color */
+}
+
+.product-desc, .product-colors {
+    color: #474742;
+    font-size: 1.3rem;
+    margin: 0.2rem 0;
+    text-align: left;
+    line-height: 1.2; 
+    max-height: 2.4em;  
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.button-row {
+    text-align: center;
+    gap: 2rem;
+    margin-top: auto;
+}
+
+.homepage-add {
+    color: white;
+    padding: 0.8rem 0.8rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: #F1BCB6;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    flex: 1;
+}
+
+.homepage-add:hover {
+    background-color: #F5B7B7;
+}
+
+.homepage-add:active {
+    transform: scale(0.95);
+}
+
+.heart-icon {
+    color: #F1BCB6;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-left: 2rem;
+}
+.heart-icon:hover {
+    color: #E76F6F;
 }
 
 .check-all-btn {
-     background-color: #ccc;
-    color: #333;
-    padding: 10px 20px;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 2rem;
     border: none;
-    border-radius: 5px;
+    text-decoration: underline;
+    background: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: block;
+    margin: 1rem auto 0 auto;
+    text-align: center;
 }
-
-.check-all-btn:hover {
-     background-color: #bbb;
-}
-
 
 /* Find Us On */
 .find-us-on {

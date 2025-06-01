@@ -30,3 +30,7 @@ body{
     margin-bottom: 2rem;
     font-weight: light;
 }
+
+.product-grid .add-to-cart *{
+    font-family: 'Noto Sans';
+}

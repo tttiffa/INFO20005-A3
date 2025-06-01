@@ -1,10 +1,3 @@
-@media (min-width: 1369px) {
-    .container {
-        max-width: 1200px;
-    }
-
-}
-
 @media (max-width: 1367px) {
     .container {
         max-width: 100%;
@@ -110,12 +103,100 @@
     }
 
     .category-tile {
-        width: 50% !important;
-        padding: 1.2rem !important;
+        width: 50%;
+        padding: 1.2rem;
     }
 
     .category-tile p {
-        font-size: 1.2rem !important;
+        font-size: 1.2rem;
+    }
+
+    .shop-by-brand h1 {
+        font-size: 0.8rem;
+    }
+
+    .shop-all-btn p{
+        font-size: 0.8rem;
+    }
+
+    .new-arrival {
+        padding: 1.5rem 0;
+    }
+    .new-arrival h1 {
+        font-size: 2rem;
+    }
+    .new-arrival .container {
+        padding: 0; 
+    }
+
+    .product-grid {
+        display: flex; 
+        flex-wrap: nowrap; 
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; 
+        grid-template-columns: unset;
+        justify-content: flex-start;
+        gap: 1rem;
+        padding: 0 0.75rem;
+        padding-bottom: 1rem; 
+        scrollbar-width: none; 
+
+    }
+    .product-grid::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .product-item, .banner-item {
+        flex-shrink: 0; 
+        width: 160px; 
+        height: auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: left; 
+        padding: 0.8rem; 
+    }
+
+    .banner-item img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .product-brand {
+        font-size: 1rem;
+        margin: 0.2rem 0;
+    }
+
+    .product-desc, .product-colors {
+        font-size: 0.8rem;
+        margin: 0.1rem 0;
+    }
+
+    .price {
+        font-size: 1rem;
+    }
+
+    .button-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: auto; 
+    }
+    
+    .homepage-add {
+        padding: 0.5rem 0.5rem;
+        font-size: 1rem;
+        flex: none;
+        width: auto;
+    }
+    .heart-icon {
+        font-size: 1.3rem;
+        margin-left: 0;
+    }
+    .check-all-btn {
+        font-size: 1.3rem;
+        margin-top: 1rem;
     }
 }
 
