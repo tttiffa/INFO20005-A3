@@ -94,8 +94,14 @@
         padding: 0 10px;
     }
 
-     .hero-imgs {
+    .hero-imgs {
         width: 100%;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+        opacity: 85%;
+        padding: 0.4rem 0.4rem;
     }
 
     .shop-now-btn {
@@ -218,6 +224,25 @@
         height: 60px;
         font-size: 2.5rem;
         margin-top: 0.2rem;
+    }
+
+    .utility-buttons .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .utility-btn {
+        font-size: 1rem;
+        padding: 1.2rem 0.8rem;
+        border-radius: 1rem;
+    }
+
+    .utility-btn i {
+        font-size: 2rem;
+    }
+
+    footer p {
+        font-size: 0.5rem;
     }
 }
 
