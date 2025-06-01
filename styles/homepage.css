@@ -399,34 +399,55 @@ border: none;
 
 /* Find Us On */
 .find-us-on {
-    padding: 40px 0;
+    padding: 2rem 1rem;
     text-align: center;
 }
 
 .find-us-on h3 {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
 .social-item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-item i {
-    font-size: 2em;
-    color: #333; /* Adjust color as needed */
-    margin-bottom: 5px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-blue);
+    color: white;
+    font-size: 3rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.social-item p {
-    margin: 0;
-    font-size: 0.9em;
+.social-item span {
+    font-size: 1.2rem;
+    background-color: var(--sky-blue);
+    color: black;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.8rem;
+}
+
+.social-item:hover {
+    transform: scale(1.1);
+    color: #F37A7A;
 }
 
 /* Utility Buttons */

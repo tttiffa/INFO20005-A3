@@ -183,7 +183,7 @@
         gap: 0.8rem;
         margin-top: auto; 
     }
-    
+
     .homepage-add {
         padding: 0.5rem 0.5rem;
         font-size: 1rem;
@@ -197,6 +197,27 @@
     .check-all-btn {
         font-size: 1.3rem;
         margin-top: 1rem;
+    }
+
+    .find-us-on h3 {
+        font-size: 2rem;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .social-item span {
+        display: none;
+    }
+
+    .social-item i {
+        width: 60px;
+        height: 60px;
+        font-size: 2.5rem;
+        margin-top: 0.2rem;
     }
 }
 

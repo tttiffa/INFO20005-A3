@@ -34,3 +34,8 @@ body{
 .product-grid .add-to-cart *{
     font-family: 'Noto Sans';
 }
+
+.find-us-on h3 {
+    font-family: 'Inter';
+    font-size: 3rem;
+}
