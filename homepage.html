@@ -17,7 +17,7 @@
 <header>
     <div class="top-bar">
         <div class="container">
-            <a href="#" class="top-link menu-icon"><i class="fas fa-bars"></i></a>
+            <a href="#mobileNav" class="top-link menu-icon"><i class="fas fa-bars"></i></a>
             <a href="#" class="top-link log-link"><i class="fa-regular fa-user"></i> <span>Log In/Sign Up</span></a>
             <a href="#" class="top-link map-link"><i class="fas fa-map-marker-alt"></i> <span>Store Locator</span></a>
             <div class="logo"><a href="homepage.html">
@@ -27,6 +27,77 @@
             <a href="#" class="top-link cart-link"><i class="fas fa-shopping-cart"></i> <span>Shopping Cart</span></a>
     </div>
     </div>
+
+    <div id="mobileNav" class="nav-overlay">
+        <div class="overlay-header">
+        <a class="overlay-menu"><i class="fas fa-bars"></i></a>
+        <a class="overlay-logo"><img src="images/W_Cosmetic_logo_White_Long.webp" alt="W Cosmetics Logo" class="logo-img"></a>    
+        <a href="#" class="back-button">BACK</a>
+        </div>
+        <ul class="mobile-first-nav">
+            <li><a href="#"><img src="Images/sale-icon.png" alt="Sale Icon"> <span>SALE</span> <i class="fa-solid fa-angle-right"></i></a>
+            <li><a href="#makeupSub"><img src="Images/makeup-icon.png" alt="Makeup Icon"> <span>MAKE UP</span>  <i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#"><img src="Images/skincare-icon.png" alt="Skincare Icon"> <span>SKINCARE</span> <i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#"><img src="Images/bath&body-icon.png" alt="Bath Body Icon"> <span>BATH&BODY</span> <i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#"><img src="Images/hair-icon.png" alt="Hair Icon"> <span>HAIR</span> <i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#"><img src="Images/accessories-icon.png" alt="Accessories Icon"> <span>ACCESSORIES</span> <i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#"><img src="Images/brand-icon.png" alt="Brand Icon"> <span>BRAND</span> <i class="fa-solid fa-angle-right"></i></a></li>
+            <a href="#" class="all-products">ALL PRODUCTS</a>
+        </ul>
+    </div>
+
+    <div id="makeupSub" class="nav-overlay">
+       <div class="overlay-header">
+       <a class="overlay-menu"><i class="fas fa-bars"></i></a>
+       <a class="overlay-logo"><img src="images/W_Cosmetic_logo_White_Long.webp" alt="W Cosmetics Logo" class="logo-img"></a>   
+       <a href="#mobileNav" class="back-button">BACK</a>
+    </div>
+
+  <!--second column navigation menu that can be stretch-->
+    <ul class="mobile-second-nav">
+    <li class="makeup-title"><span>MAKE UP</span></li>
+    <li>
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+        Face <i class="fa-solid fa-angle-down arrow-icon"></i>
+        </summary>
+        <ul class="accordion-content">
+          <li><a href="pages/listofproduct.html">Primer</a></li>
+          <li><a href="#">Base</a></li>
+          <li><a href="#">Concealer</a></li>
+          <li><a href="#">Powder</a></li>
+          <li><a href="#">Contour</a></li>
+          <li><a href="#">Blush/Highlighter</a></li>
+          <li><a href="#">Setting</a></li>
+        </ul>
+      </details>
+    </li>
+
+    <li>
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+          Eye <i class="fa-solid fa-angle-down arrow-icon"></i>
+        </summary>
+      </details>
+    </li>
+
+    <li>
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+        Lips <i class="fa-solid fa-angle-down arrow-icon"></i>
+        </summary>
+      </details>
+    </li>
+
+    <li>
+      <details class="accordion-item">
+        <summary class="accordion-summary">
+          Nails <i class="fa-solid fa-angle-down arrow-icon"></i>
+        </summary>
+      </details>
+    </li>
+  </ul>
+</div>
 
      <div class="promo-banner" id="promoBanner">
             <span class="promo-text">Spend over $99 for free shipping!</span>
@@ -48,7 +119,7 @@
         <div class="container">
             <ul>
                 <li><a href="#">SALE</a></li>
-                <li><a href="#">MAKE UP</a></li>
+                <li><a href="#" class="makeup-trigger">MAKE UP</a></li>
                 <li><a href="#">SKINCARE</a></li>
                 <li><a href="#">BATH & BODY</a></li>
                 <li><a href="#">HAIR</a></li>
@@ -57,7 +128,45 @@
                 <li><a href="#"><span class="all-products">ALL PRODUCTS</span></a></li>
             </ul>
         </div>
-    </nav>
+
+    <div class="makeup-dropdown" id="makeupDropdown">
+        <div class="side-menu-column">
+            <ul class="side-menu">
+                <li><a href="#"><img src="Images/sale-icon.png" alt="Sale Icon"> SALE <i class="fa-solid fa-angle-right"></i></a>
+                <li><a href="#"><img src="Images/makeup-icon.png" alt="Makeup Icon"> MAKE UP <i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="#"><img src="Images/skincare-icon.png" alt="Skincare Icon"> SKINCARE <i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="#"><img src="Images/bath&body-icon.png" alt="Bath Body Icon"> BATH&BODY <i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="#"><img src="Images/hair-icon.png" alt="Hair Icon"> HAIR <i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="#"><img src="Images/accessories-icon.png" alt="Accessories Icon"> ACCESSORIES <i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="#"><img src="Images/brand-icon.png" alt="Brand Icon"> BRAND <i class="fa-solid fa-angle-right"></i></a></li>
+            </ul>
+        </div>
+        <div class="popup-column">
+            <ul>
+            <li><span>MAKE UP</span></li>
+            <li><a href="#" class="face-btn">Face<i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#">Eye<i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#">Lips<i class="fa-solid fa-angle-right"></i></a></li>
+            <li><a href="#">Nails<i class="fa-solid fa-angle-right"></i></a></li>
+            </ul>
+       </div>
+
+       <div class="sub-popup" id="faceSub">
+        <ul>
+            <li><a href="#"><span>Face</span></a></li>
+            <li><a href="pages/listofproduct.html">Primer</a></li>
+            <li><a href="#">Base</a></li>
+            <li><a href="#">Concealer</a></li>
+            <li><a href="#">Powder</a></li>
+            <li><a href="#">Contour</a></li>
+            <li><a href="#">Blush/Highlighter</a></li>
+            <li><a href="#">Setting</a></li>
+        </ul>
+       </div>
+    </div>
+   </nav> 
+
+
 </header>
 
 <main>

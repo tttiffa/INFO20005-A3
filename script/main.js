@@ -105,3 +105,37 @@ function prevBanner() {
 document.querySelector('.left-arrow').addEventListener('click', prevBanner);
 document.querySelector('.right-arrow').addEventListener('click', nextBanner);
 showBanner(currentIndex);
+
+
+
+/* pop-up navigation on desktop homepage */
+  const makeupTrigger = document.querySelector('.makeup-trigger');
+    const makeupDropdown = document.getElementById('makeupDropdown');
+    const faceBtn = document.querySelector('.face-btn');
+    const faceSub = document.getElementById('faceSub');
+
+/* Open or close the pop-up navigation bar for destop version*/
+    makeupTrigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      makeupDropdown.style.display =
+        makeupDropdown.style.display === 'flex' ? 'none' : 'flex';
+      /* hide the third column everytime when open*/
+      faceSub.classList.remove('show');
+    });
+
+    /*Click face to show the third column*/
+    faceBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      faceSub.classList.toggle('show');
+    });
+
+    /* Click other place to close the whole pop-up*/
+    document.addEventListener('click', function (e) {
+      if (
+        !makeupTrigger.contains(e.target) &&
+        !makeupDropdown.contains(e.target)
+      ) {
+        makeupDropdown.style.display = 'none';
+        faceSub.classList.remove('show');
+      }
+    });
