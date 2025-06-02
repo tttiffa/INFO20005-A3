@@ -47,3 +47,11 @@ body{
 .makeup-dropdown {
     font-family: 'Inter';
 }
+
+.primer-text h1 {
+    font-family: 'Inter';
+}
+
+.primer.text p {
+     font-family: 'Noto Sans',sans-serif !important;
+}

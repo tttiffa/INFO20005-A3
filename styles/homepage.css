@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
     padding: 0;
     background-color: var(--primary-pink); /* Light background */
-    color: hsl(0, 0%, 20%);
+    color: #474742;
 }
 
 /* Header Styling */
@@ -299,7 +299,7 @@ border: none;
     width: 100%;
     display: none;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: 0.5s ease;
 }
 
 .banner-img.active {
@@ -631,7 +631,6 @@ border: none;
     background-color: #5588BB; /* Darker blue on hover */
     transform: scale(1.05)
 }
-
 
 /* Footer */
 footer {
