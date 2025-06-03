@@ -25,13 +25,31 @@
     padding: 0.4rem 1rem;
     font-size: 1.5rem;
     text-align: center;
-    font-weight: bold;
+    font-weight: 600;
     background-color: #F1BCB6;
     border: none;
-    border-radius: 2rem;
+    border-radius: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 .add-to-cart:hover {
     background-color: #f5b7b7;
+}
+
+.sold-out {
+    background-color: #E2E0E5;
+    color: #777477;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.heart-icon, .wishlist-icon {
+    color: #F1BCB6;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
 }

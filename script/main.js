@@ -138,4 +138,5 @@ showBanner(currentIndex);
         makeupDropdown.style.display = 'none';
         faceSub.classList.remove('show');
       }
-    });
+
+    }); 

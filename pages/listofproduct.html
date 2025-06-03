@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>W Cosmetics/Make Up/Primer</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="../styles/listofproduct.css">
 <link rel="stylesheet" href="../styles/responsive.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="../script/main.js" defer></script>
+
 </head>
 
 <body>
@@ -105,12 +105,6 @@
   </ul>
 </div>
 
-     <div class="promo-banner" id="promoBanner">
-            <span class="promo-text">Spend over $99 for free shipping!</span>
-            <button class="close-btn" id="closeBanner">&times;</button>
-     </div>
-     </div>
-
      <div class="primer-banner">
         <img src="../Images/primer-background.png" alt="Primer Background" class="primer-img">
     <div class="primer-text">
@@ -120,18 +114,28 @@
       </div>
 </header>
 
+
 <section class="filter-bar">
     <div class="filter-container">
-        <div class="filter-group">
-          <span class="filter-title">Filter By:</span>
+          <button id="filterTriggerMobile" class="filter-title">Filter By:</button>
+          
+          <div class="sort-container">
+          <button id="sortTriggerMobile" class="sort-title">Sort By<i id="sortArrow" class="fa-solid fa-chevron-down"></i></button>
+        </div>
+    </div>
+</section>
+    
+       <div class="filter-sort">
+         <div class="controls-left">
           <div class="select-wrapper">
             <select name="availability" id="availability">
               <option value="">Availability</option>
-              <option value="in-stock">In Stock</option>
-              <option value="out-of-stock">Out of Stock</option>
+              <option value="in-stock">In Stock(10)</option>
+              <option value="out-of-stock">Out of Stock(1)</option>
             </select>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
+
           <div class="select-wrapper">
             <select name="price" id="price">
               <option value="">Price</option>
@@ -140,22 +144,133 @@
             </select>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
-        </div>
+          </div>
 
-        <div class="sort-group">
-          <span class="filter-title">Sort By:</span>
+          <div class="controls-right">
           <div class="select-wrapper">
             <select name="sort" id="sort">
               <option value="">Featured</option>
-              <option value="newest">Newest</option>
               <option value="bestselling">Best Selling</option>
+              <option value="alphabeticala-z">Alphabetically,A-Z</option>
+              <option value="alphabeticalz-a">Alphabetically,Z-A</option>
               <option value="price-low-high">Price: Low to High</option>
+              <option value="price-high-low">Price: High to Low</option>
             </select>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
         </div>
-      </div>
-    </section>
+    </div>
+ </section>
 
+  <main class="product-list">
+      <div class="product-grid">
+        <div class="product-card" data-id="3ce">
+          <div class="image-wrapper">
+            <img src="../Images/3ce-1.webp" alt="3CE Glow Beam 45ML" class="primary-img"/>
+            <img
+              src="../Images/3ce-2.webp" alt="3CE Glow Beam 45ML (hover)" class="secondary-img"/>
+          </div>
+       <div class="product-info">
+            <h2 class="brand">3CE</h2>
+            <p class="product-name">Glow Beam 45ML</p>
+            <span class="price">$38.00</span>
+          </div>
+          <div class="product-add">
+            <button class="add-to-cart">ADD TO CART</button>
+            <i class="fa-regular fa-heart wishlist-icon"></i>
+          </div>
+        </div>
+
+        <div class="product-card" data-id="banila1">
+          <div class="image-wrapper">
+            <img src="../Images/banila-1.webp" alt="Banila Co Primer Setting Fixer" class="primary-img"/>
+            <img src="../Images/banila-2.webp" alt="Banila Co Primer Setting Fixer (hover)" class="secondary-img"/>
+          </div>
+          <div class="product-info">
+            <h2 class="brand">BANILA CO</h2>
+            <p class="product-name">Primer Setting Fixer</p>
+            <span class="price">$28.00</span>
+          </div>
+          <div class="product-add">
+            <button class="add-to-cart">ADD TO CART</button>
+            <i class="fa-regular fa-heart wishlist-icon"></i>
+          </div>
+        </div>
+
+        <div class="product-card" data-id="banila2">
+          <div class="image-wrapper">
+            <img src="../Images/co-1.webp" alt="Banila Co R2 Prime Primer 30ML" class="primary-img"/>
+            <img src="../Images/co-2.webp" alt="Banila Co R2 Prime Primer 30ML (hover)" class="secondary-img"/>
+          </div>
+          <div class="product-info">
+            <h2 class="brand">BANILA CO</h2>
+            <p class="product-name">R2 Prime Primer 30ML</p>
+            <span class="price">$62.00</span>
+            <span class="variant-info">3 Colours</span>
+          </div>
+          <div class="product-add">
+            <button class="add-to-cart">ADD TO CART</button>
+            <i class="fa-regular fa-heart wishlist-icon"></i>
+          </div>
+        </div>
+
+          <div class="product-card" data-id="Etude1">
+          <div class="image-wrapper">
+            <img src="../Images/etude-1.webp" alt="Etude House Aura Volumer 24G" class="primary-img"/>
+            <img src="../Images/etude-2.webp" alt="Etude House Aura Volumer 24G (hover)" class="secondary-img"/>
+          </div>
+          <div class="product-info">
+            <h2 class="brand">ETUDE HOUSE</h2>
+            <p class="product-name">Aura Volumer 24G</p>
+            <span class="price">$26.00</span>
+          </div>
+          <div class="product-add">
+            <button class="add-to-cart">ADD TO CART</button>
+            <i class="fa-regular fa-heart wishlist-icon"></i>
+          </div>
+        </div>
+
+          <div class="product-card" data-id="canmake1">
+          <div class="image-wrapper">
+            <img src="../Images/canmake-1.webp" alt="Mermaid Skin Gel UV" class="primary-img"/>
+            <img src="../Images/canmake-2.webp" alt="Mermaid Skin Gel UV (hover)" class="secondary-img"/>
+          </div>
+          <div class="product-info">
+            <h2 class="brand">CANMAKE</h2>
+            <p class="product-name">Mermaid Skin Gel UV</p>
+            <span class="price">$38.00</span>
+          </div>
+          <div class="product-add">
+            <button class="add-to-cart">ADD TO CART</button>
+            <i class="fa-regular fa-heart wishlist-icon"></i>
+          </div>
+        </div>
+
+          <div class="product-card" data-id="dalba">
+          <div class="image-wrapper">
+            <img src="../Images/dalba-1.webp" alt="dalba waterfull essence cream 50ML" class="primary-img"/>
+            <img src="../Images/dalba-2.webp" alt="dalba waterfull essence cream 50ML (hover)" class="secondary-img"/>
+          </div>
+          <div class="product-info">
+            <h2 class="brand">D'ALBA</h2>
+            <p class="product-name">Waterfull Essence Cream 50ML</p>
+            <span class="price">$40.00</span>
+          </div>
+          <div class="product-add">
+            <button class="sold-out">SOLD OUT</button>
+            <i class="fa fa-heart wishlist-icon"></i>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+    <footer class="site-footer">
+      <p>© 2025 W Cosmetics | Term of Use | Private Policy</p>
+    </footer>
+  </div>
 </body>
+
+<script src="../script/main.js"></script>
 </html>

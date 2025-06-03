@@ -1,8 +1,7 @@
 body {
-    margin: 0 auto;
-    padding: 0;
     background-color: var(--primary-pink); /* Light background */
     color: #474742;
+    font-family: "noto sans";
 }
 .primer-banner {
   position: relative;
@@ -29,14 +28,414 @@ body {
   color: #777477;
   text-align: center;
   z-index: 2;      
-  padding: 0 1rem;   
+  width: 70%;
 }
 
 .primer-banner .primer-text p{
+  display: flex;
   letter-spacing: 1px;
+  font-weight: 400;
 }
 
+/*Filter and Sort by section */
+.filter-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 
+}
 
+.filter-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--tile-blue);
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
 
+.filter-title, .sort-title {
+  color: white;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
 
+.sort-title i {
+    display: none;
+    color: white;
+    padding: 1rem;
+    display: none;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.filter-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.controls-left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.controls-right {
+    display: flex;
+    align-items: center;
+}
+
+.select-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.select-wrapper select {
+  appearance: none;     /*Canceled the default arrow*/
+  -webkit-appearance: none;
+  background-color: var(--sky-blue);
+  border: none;
+  padding: 1rem 2rem 1rem 0.8rem;
+  border-radius: 1rem;
+  font-size:1.3rem;
+  color: #333;
+  width: 100%;
+  cursor: pointer;
+}
+
+.select-wrapper i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+.select-wrapper select:focus {
+  outline: none;
+}
+
+/*product cards in the list of product page*/
+
+.product-list {
+    width: 90%;
+    flex: 1;
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+ }
+
+.product-card {
+    background-color: var(--sky-blue);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+    position: relative;
+    margin:0;
+    padding: 0;
+}
+
+.image-wrapper {
+    position: relative;
+    margin: 1rem 1rem 0;
+    padding: 0 1rem;
+    padding-top: 90%; 
+    width: calc(100% - 2rem);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.image-wrapper .secondary-img {
+    opacity: 0;
+}
+
+.image-wrapper:hover .secondary-img {
+    opacity: 1;
+}
+
+.image-wrapper:hover .primary-img {
+    opacity: 0;
+ }
+
+.product-info {
+    padding: 0 1.2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.brand {
+    font-size: 1.6rem;
+    font-weight: 1000;
+    margin: 0.3rem 0;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    color: #565354;
+    margin: 0.3rem 0;
+}
+
+.price {
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    font-weight: bold;
+    line-height: 1;
+    margin: 0.3rem 0;
+}
+    
+.variant-info {
+    font-size: 1.2rem;
+    line-height: 1;
+    margin: 0.3rem 0;
+}
+
+.product-add {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem 2rem;
+}
+    
+.add-to-cart, .sold-out {
+    padding: 0.8rem 1.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: auto;
+}
+
+.add-to-cart {
+    color: white;
+}
+
+.add-to-cart:hover {
+    background-color: #e09088;
+}
+
+.sold-out {
+    cursor: not-allowed;
+}
+
+.wishlist-icon {
+    font-size: 2rem;
+    padding: 0 3rem;
+    cursor: pointer;
+ }
+
+.wishlist-icon.favorited {
+    color: #F1BCB6;
+   }
+
+    /*Footer*/
+footer {
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    border-top: 1px solid black;
+ }
+
+ footer p {
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+    text-align: left;
+ }
+
+/*filter modal for mobile page */
+.filter-modal {
+    display: none; /* <--- Default hidden for desktop */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Higher than sort dropdown */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.7); /* Darker overlay for modal */
+    overflow: auto; /* Enable scroll if modal content overflows */
+    justify-content: flex-end; /* Align content to the right (like a sidebar) */
+    align-items: flex-start; /* Align content to the top */
+    /* For animation */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.filter-modal.show {
+    display: flex; /* Use flex to position content */
+    opacity: 1;
+    visibility: visible;
+}
+
+.filter-modal-content {
+    background-color: #fefefe; /* White background for the modal panel */
+    width: 0; /* Start with 0 width for slide-in animation */
+    height: 100%; /* Full height of the viewport */
+    max-width: 300px; /* Max width for the filter panel */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3); /* Shadow on the left edge */
+    transition: width 0.3s ease; /* Smooth width transition */
+    display: flex;
+    flex-direction: column; /* Content inside stacks vertically */
+    padding: 0; /* No padding on content wrapper itself */
+    box-sizing: border-box;
+}
+
+.filter-modal.show .filter-modal-content {
+    width: 280px; /* <--- Adjust this to the desired width of the filter panel */
+}
+
+.modal-header {
+    background-color: var(--tile-blue);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-filter-modal-button {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1; /* Align 'x' properly */
+}
+
+.close-filter-modal-button:hover,
+.close-filter-modal-button:focus {
+    color: #ccc;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    flex-grow: 1; /* Allow body to take available space */
+    overflow-y: auto; /* Enable vertical scrolling for filter options */
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-section h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.filter-option input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--tile-blue); /* Checkbox color */
+}
+
+.price-inputs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.price-inputs label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.price-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    box-sizing: border-box;
+}
+
+.price-info {
+    font-size: 0.9rem;
+    color: #888;
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.apply-filters-button {
+    background-color: var(--tile-blue);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.apply-filters-button:hover {
+    background-color: #0056b3;
+}
