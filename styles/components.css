@@ -21,7 +21,6 @@
 }
 
 .add-to-cart {
-    margin-top: auto;
     padding: 0.4rem 1rem;
     font-size: 1.5rem;
     text-align: center;
@@ -31,6 +30,7 @@
     border-radius: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
+    color: white
 }
 .add-to-cart:hover {
     background-color: #f5b7b7;
@@ -52,4 +52,16 @@
     border: none;
     font-size: 1.8rem;
     cursor: pointer;
+}
+
+.buy-it-now {
+    background-color: var(--primary-blue);
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-weight: 600;
+    color: white;
+    padding: 0.4rem 1rem;
 }

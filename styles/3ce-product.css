@@ -1,0 +1,402 @@
+html,body{
+    margin:0;
+    padding:0;
+    width: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--sky-blue);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    background-color: var(--breadcrumb-blue);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+.breadcrumb a, .bc-current {
+    display: inline-flex;
+    align-items: center;
+    color: black;
+}
+
+.breadcrumb .bc-home {
+    font-size: 1.6rem;
+}
+
+.breadcrumb .bc-sep {
+    margin: 0 0.7rem;
+    text-decoration: none;
+}
+
+.breadcrumb .bc-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .bc-current {
+    font-weight: 600;
+}
+
+.product-page-1 {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.product-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.image-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.image-main {
+  position: relative;
+  width: 90%;
+  padding-top: 80%;
+  background-color: var(--primary-pink);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.image-main .main-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+.image-main .img-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+.image-main .img-nav:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.image-main .img-nav.prev {
+  left: 1rem;
+  border-color: transparent;
+  font-size: 1.5rem;
+  opacity: 95%;
+}
+.image-main .img-nav.next {
+  right: 1rem;
+  border-color: transparent;
+  font-size: 1.5rem;
+  opacity: 95%;
+}
+.image-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.image-thumbs .thumb-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-swatch-border);
+  border-radius: 1 rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.image-thumbs .thumb-btn.active {
+  border-color: transparent;
+}
+
+.image-thumbs .thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.product-des {
+   padding: 3rem;
+}
+
+.brand-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  letter-spacing: 1px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-top: 1rem;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 2rem;
+  color: var(--text-dark);
+}
+
+.review-label {
+  font-weight: 500;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+.stars i {
+  margin-left: 0.25rem;
+  color: var(--button-pink);
+}
+
+.price {
+  font-size: 2.3rem;
+  font-weight: 1000;
+  color: var(--primary-blue);
+ 
+}
+
+.color-select {
+  gap: 0.5rem;
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 0.75rem;
+  font-weight: 800;
+}
+
+.color-select .swatch-sep {
+  display: inline-block;
+  border-radius: 1rem;
+  padding: 0.1rem 2.6rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: black;
+  background-color: var(--button-pink);
+  margin-left: 1rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity .qty-btn {
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border: 1px solid transparent;
+  opacity: 95%;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity .qty-input {
+  width: 2.5rem;
+  height: 2rem;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.qty-btn:hover {
+    background-color: #F0F0F0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+
+.wishlist-icon {
+  background-color: transparent;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-it-now {                  
+  margin-top: 1rem;                               
+}
+
+@media screen and (max-width: 391px) {
+.breadcrumb {
+    font-size: 1rem;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.image-section {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-main {
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    width: 100%;
+}
+
+.image-section .img-nav.prev {
+  left: 0.25rem;             
+}
+.image-section .img-nav.next {
+  right: 0.25rem;         
+}
+
+ .image-thumbs {
+    display: flex;
+    justify-content: center;  
+    margin-top: 0.25rem;
+    width: 100%;           
+    overflow-x: auto;        
+  }
+
+   .image-thumbs .thumb-btn {
+    flex: 0 0 auto;
+    width: 5rem;
+    height: 5rem;
+  }
+
+.product-info {
+    margin-top: 0.25rem;
+}
+
+.brand-name {
+  font-size: 2rem;
+  text-align: center; 
+  margin: 0 6rem;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+.review {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.product-des .price {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.color-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.color-select span {
+    font-size: 1.2rem;
+    font-weight:  500;
+}
+
+.actions {
+    align-items: center;
+}
+
+.action-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity {
+    margin-left: 2rem;
+}
+
+.add-to-cart {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    margin-right: 1rem;
+}
+
+.actions .wishlist-icon {
+    font-size: 1.6rem;
+    margin-right: 0.5rem;
+}
+
+.buy-it-now {
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    max-width: 80%;
+    width: 100%;
+}
+}

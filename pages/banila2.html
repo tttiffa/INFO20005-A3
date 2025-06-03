@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>W Cosmetics/Make Up/Primer</title>
+<title>W Cosmetics/Primer/BANILA CO R2 Prime Primer 30ML</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
 
@@ -12,10 +12,11 @@
 <link rel="stylesheet" href="../styles/components.css">
 <link rel="stylesheet" href="../styles/layout.css">
 <link rel="stylesheet" href="../styles/homepage.css">
-<link rel="stylesheet" href="../styles/listofproduct.css">
+<link rel="stylesheet" href="../styles/banila-product.css">
 <link rel="stylesheet" href="../styles/responsive.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="../script/main.js" defer></script>
+<script src="../script/productpage.js" defer></script>
 </head>
 
 <body>
@@ -106,8 +107,92 @@
 </div>
 </header>
 
+<main class="banila-product">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../homepage.html" class="bc-home"><i class="fa-solid fa-house"></i></a>
+    <span class="bc-sep">></span>
+    <a href="../pages/listofproduct.html" class="bc-link">Primer</a>
+    <span class="bc-sep">></span>
+    <span class="bc-current">BANILA CO R2 Prime Primer 30ML</span>
+    </nav>
 
+    <main class="product-page-2">
+    <div class="product-container">
+      <section class="image-section">
+        
+        <div class="image-main">
+          <button class="img-nav prev"><i class="fa-solid fa-arrow-left"></i></button>
+          <img src="../Images/co-1.webp" alt="3CE Glow Beam 45ML" class="main-img">
+          <button class="img-nav next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="image-thumbs">
+          <button class="thumb-btn active">
+            <img src="../Images/co-1.webp" alt="BANILA CO Thumbnail">
+          </button>
+          <button class="thumb-btn">
+            <img src="../Images/co-2.webp" alt="BANIlA CO Hover Thumbnail1">
+          </button>
+           <button class="thumb-btn">
+            <img src="../Images/co-3.webp" alt="BANIlA CO Hover Thumbnail2">
+          </button>
+           <button class="thumb-btn">
+            <img src="../Images/co-4.webp" alt="BANIlA CO Hover Thumbnail3">
+          </button>
+           <button class="thumb-btn">
+            <img src="../Images/co-5.webp" alt="BANIlA CO Hover Thumbnail4">
+          </button>
+           <button class="thumb-btn">
+            <img src="../Images/co-6.webp" alt="BANIlA CO Hover Thumbnail5">
+          </button>
+           <button class="thumb-btn">
+            <img src="../Images/co-7.webp" alt="BANIlA CO Hover Thumbnail6">
+          </button>
+        </div>
+      </section>
 <body>
+
+        <section class="product-des">
+        <h1 class="brand-name">BANILA CO</h1>
+        <h2 class="product-title">R2 Prime Primer 30ML</h2>
+        <div class="review">
+          <span class="review-label">Review:</span>
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+        </div>
+
+        <div class="price">$62.00</div>
+        <div class="color-select">
+          <span>Select Colour</span>
+          <div class="color-options">
+            <span class="swatch-btn" data-color="PINK">PINK</span>
+            <input type="hidden" id="selected-colour" name="selectedColour" value="PINK">
+
+            <span class="swatch-btn" data-color="BLUE">BLUE</span>
+            <span class="swatch-btn" data-color="WHITE">WHITE</span>
+        </div>
+        </div>
+
+        <div class="actions">
+           <div class="action-row">
+        <div class="quantity">
+          <button class="qty-btn" data-action="decrease">-</button>
+          <input type="text" class="qty-input" value="1" readonly>
+          <button class="qty-btn" data-action="increase">+</button>
+        </div>
+          <button class="add-to-cart">ADD TO CART</button>
+          <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <button class="buy-it-now">BUY IT NOW</button>
+      </section>
+      </div>
+    </div>
+  </main>
     
 </body>
 </html>

@@ -271,7 +271,7 @@
     box-sizing: border-box;
   }
 
-   .product-grid {
+   .second-product-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem; 
@@ -297,7 +297,7 @@
     font-size: 0.8rem;
     margin: 0.1rem 0;
   }
-  .price {
+  .product-info .price {
     font-size: 1rem;
     margin: 0.3rem 0;
   }
