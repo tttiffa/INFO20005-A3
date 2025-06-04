@@ -14,9 +14,12 @@
 <link rel="stylesheet" href="../styles/homepage.css">
 <link rel="stylesheet" href="../styles/listofproduct.css">
 <link rel="stylesheet" href="../styles/responsive.css">
+<link rel="stylesheet" href="../styles/cart.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="../script/main.js" defer></script>
+<script src="../script/cart.js"></script>
 </head>
+
 
 <body>
    <header>
@@ -30,7 +33,7 @@
             <img src="../images/W_Cosmetic_logo_White_Long.webp" alt="W Cosmetics Logo" class="logo-img"></a>
             </div>
             <a href="#" class="top-link heart-link"><i class="fas fa-heart"></i> <span>Wishlist</span></a>
-            <a href="#" class="top-link cart-link"><i class="fas fa-shopping-cart"></i> <span>Shopping Cart</span></a>
+            <a href="../pages/cart.html" class="top-link cart-link"><i class="fas fa-shopping-cart"></i> <span>Shopping Cart</span></a>
     </div>
     </div>
 
@@ -106,7 +109,166 @@
 </div>
 </header>
 
+<nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../homepage.html" class="bc-home"><i class="fa-solid fa-house"></i></a>
+    <span class="bc-sep"> > </span>
+    <span class="bc-cart">Shopping Cart</span>
+    </nav>
 
+<main class="main-wrapper">
+<div class="cart-and-recommend">
+<section class="cart-header">
+  <h1>SHOPPING CART</h1>
+  <div class="item-count"><span id="header-item-count">0</span> ITEM</div>
+
+  <div class="shipping-msg" id="shipping-msg">
+    You are $99 away from free shipping! Don't miss out!
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress" id="shipping-progress"></div>
+  </div>
+</section>
+
+    <section class="cart-table-wrapper">
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th style="width:60%;">Product</th>
+          <th style="width:20%;">Quantity</th>
+          <th style="width:20%">Price</th>
+        </tr>
+      </thead>
+
+      <tbody id="cart-tbody">
+        <tr class="cart-item" data-product-id="p1">
+           <td class="product-cell">
+            <div class="product-info">
+              <img src="../Images/3ce-1.webp" alt="3CE Glow Beam 45ML"/>
+              <div class="product-details">
+                <div class="brand-name">3CE</div>
+                <div class="product-title">Glow Beam 45ML</div>
+                <div class="product-color">Colour: / </div>
+              </div>
+            </div>
+           </td>
+
+           <td class="qty-cell">
+            <div class="qty-control">
+                <button class="minus">-</button>
+                <span class="qty-number">1</span>
+                <button class="plus">+</button>
+              </div>
+           </td>
+
+            <td class="price-cell" data-price="38.00">
+              $38.00
+            </br>
+            <a href="#" class="remove-link">Remove</a>
+          </td>
+          </tr>
+
+          <tr class="cart-item" data-product-id="p2">
+          <td class="product-cell">
+            <div class="product-info">
+              <img src="../Images/co-1.webp" alt="BANILA CO R2"/>
+              <div class="product-details">
+                <div class="brand-name">BANILA CO</div>
+                <div class="product-title">R2 Prime Primer 30ML</div>
+                <div class="product-color">Colour: Pink </div>
+              </div>
+            </div>
+           </td>
+
+           <td class="qty-cell">
+            <div class="qty-control">
+                <button class="minus">-</button>
+                <span class="qty-number">1</span>
+                <button class="plus">+</button>
+              </div>
+           </td>
+
+          <td class="price-cell" data-price="62.00">
+            $62.00
+          </br>
+            <a href="#" class="remove-link">Remove</a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    </section>
+
+    <section class="recommend-section">
+      <h2>You Might Also Like...</h2>
+      <div class="recommend-item">
+        <div class="product-item">
+                    <img src="../Images/tie tie new arrival 1 .webp" alt="tirtir-suncream">
+                    <p class="product-brand">TIR TIR</p>
+                    <p class="product-desc">Hydro UV Shield Prime Plus SPF 50+ Broad Spectrum 50ML</p>
+                     <p class="price">$30.00</p>
+                     <div class="button-list">
+                     <button class="homepage-add">ADD TO CART</button>
+                     <a href="#" class="heart-icon"><i class="fa-regular fa-heart"></i></a>
+                     </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="../Images/tir tir my glow lip oil .webp" alt="tirtir-lipoil">
+                    <p class="product-brand">TIR TIR</p>
+                    <p class="product-desc">My Grow Lip Oil 5.7ML</p>
+                    <p class="product-colors">4 Colours</p>
+                    <p class="price">$16.00</p>
+                    <div class="button-list">
+                    <button class="homepage-add">ADD TO CART</button>
+                    <a href="#" class="heart-icon"><i class="fa-regular fa-heart"></i></a>
+                </div>
+                </div>
+                <div class="product-item">
+                    <img src="../Images/etude housr dear darling oil.webp" alt="etude-oiltint">
+                     <p class="product-brand">ETUDE HOUSE</p>
+                     <p class="product-desc">Dear Darling Oil Tint</p>
+                     <p class="product-colors">5 Colours</p>
+                     <p class="price">$16.00</p>
+                     <div class="button-list">
+                     <button class="homepage-add">ADD TO CART</button>
+                     <a href="#" class="heart-icon"><i class="fa-regular fa-heart"></i></a>
+                    </div>
+                </div>
+      </div>
+    </section>
+   </div>
+
+   <aside class="side-bar">
+    <div class="cart-card">
+       <h3>Promos & Gift Cards</h3>
+       <input type="text" class="input-field" placeholder="Enter code:" aria-label="Enter promo or gift card code"/>
+       <div class="btn-apply">APPLY</div>
+    </div>
+
+    <div class="cart-card">
+        <h3>Order Notes</h3>
+        <textarea placeholder="Add a new order notes ..."></textarea>
+        <div class="subtotal-row">
+          <h3> Subtotal: <span id="subtotal-amount">$00.00</span></h3>
+        </div>
+        </div>
+
+      <div class="cart-card">
+        <h3>PAYMENT METHOD</h3>
+        <div class="payment-icons">
+          <img src="../Images/paypal-1.png" alt="paypal-logo"/>
+          <img src="../Images/visa-1.png" alt="visa-logo"/>
+          <img src="../Images/afterpay-1.png" alt="afterpay-logo"/>
+          </div>
+
+          <div class="cart-card">
+        <div class="btn-primary">CHECKOUT</div>
+        <div class="btn-secondary">CONTINUE SHOPPING</div>
+      </div>
+    </aside>
+
+  </main>
 
 </body>
 </html>

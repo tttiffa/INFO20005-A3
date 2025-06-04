@@ -221,6 +221,23 @@
   }
 }
 
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    background-color: var(--breadcrumb-blue);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: black;
+}
 
+.breadcrumb a, .bc-current {
+    display: inline-flex;
+    align-items: center;
+    color: black;
+}
+
+.breadcrumb .bc-home {
+    font-size: 1.6rem;
+}
 
 

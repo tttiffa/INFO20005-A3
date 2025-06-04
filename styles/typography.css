@@ -55,3 +55,7 @@ body{
 .primer.text p {
      font-family: 'Noto Sans',sans-serif !important;
 }
+
+.textarea {
+    font-family: 'Inter';
+}
