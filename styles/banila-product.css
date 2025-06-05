@@ -329,7 +329,7 @@ html,body{
     display: flex;
     justify-content: center;  
     margin-top: 0.25rem;
-    width: 100%;           
+    width: 90%;           
     overflow-x: auto;        
   }
 

@@ -276,3 +276,116 @@ footer {
     text-align: left;
  }
 
+@media (max-width:391px) {
+    .primer-banner {
+        position: relative;
+        width: 100%;
+        height: 200px;      
+        overflow: hidden; 
+        }
+    
+        .primer-banner .primer-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #777477;
+        text-align: center;
+        z-index: 2;      
+        padding: 0 0.5rem;  
+        font-size: 0.9rem;
+        }
+    
+       .product-list {
+        width: 100%;
+        padding: 1.5rem 1rem;  
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+    
+       .second-product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem; 
+      }
+    
+      .image-wrapper {
+        position: relative;
+        margin-right: 0.8rem; 
+        padding-top: 90%;       
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+    
+      .product-info {
+        padding: 0.4rem 0.8rem; 
+        box-sizing: border-box;
+      }
+      .brand {
+        font-size: 1rem;
+        margin: 0.1rem 0;
+      }
+      .product-name {
+        font-size: 0.8rem;
+        margin: 0.1rem 0;
+      }
+      .product-info .price {
+        font-size: 1rem;
+        margin: 0.3rem 0;
+      }
+      .variant-info {
+        font-size: 0.8rem;
+        margin: 0.2rem 0;
+      }
+      .product-add {
+        padding: 0.3rem 0.3rem 1.5rem; 
+      }
+    
+      .add-to-cart,
+      .sold-out {
+        padding: 0.5rem 1rem; 
+        font-size: 0.8rem;
+        white-space: nowrap;
+        border-radius: 0.6rem;
+        margin-right: auto;   
+      }
+    
+      .wishlist-icon {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+    
+        .image-wrapper .secondary-img {
+        display: none;      
+      }
+       .image-wrapper .primary-img {
+        opacity: 1 !important;
+      }
+    
+       .filter-bar {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         padding: auto;
+      }
+    
+       .filter-container {
+        padding: 1rem 1rem;
+       }
+    
+        .filter-title, .sort-title {
+        font-size: 1rem;         
+        }
+    
+        .filter-title:hover, .sort-title:hover {
+        opacity: 0.8;
+        }
+    
+       .filter-sort {
+        display: none;
+       }
+    
+        .mobile-filter-sort {
+        display: flex;
+        }
+}

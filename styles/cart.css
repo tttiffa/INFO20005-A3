@@ -53,7 +53,7 @@
 .cart-card {
     padding: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 4px solid white;
+    border-top: 4px solid white;
 }
 
 .cart-card h3 {
@@ -349,6 +349,7 @@ table.cart-table tbody td.qty-cell {
     width: 100%;
     background-color: #E3E9F2;
     border-top: 4px solid white;
+    border-bottom: 4px solid white;
 }
 
 .recommend-section > h2 {
@@ -439,32 +440,15 @@ table.cart-table tbody td.qty-cell {
     transition: color 0.2s ease;
 }
 
-
 /* --- Responsive adjustments --- */
-@media (max-width: 1024px) {
+@media (max-width: 391px) {
     .main-wrapper {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-    }
-
-    .cart-and-recommend,
-    .side-bar {
-        max-width: 95%; /* Adjust for tablet */
+        align-items: stretch;
         width: 100%;
-    }
-
-    .recommend-item {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .top-bar .top-link span {
-        display: none;
-    }
-
-    .top-bar .logo img {
-        height: 30px;
+        padding: 0;
+        margin: 0;
     }
 
     .cart-table thead {
