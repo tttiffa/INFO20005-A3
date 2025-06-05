@@ -46,7 +46,6 @@
 
 .cart-and-recommend {
     flex: 2;
-    border-right: 5px solid white;
 }
 
 /*sidebar*/
@@ -55,6 +54,7 @@
     box-sizing: border-box;
     flex: 1;
     gap: 2rem;
+    border-left: 5px solid white;
 }
 
 .cart-card {
@@ -131,6 +131,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -780,7 +781,6 @@ table.cart-table tbody td.qty-cell {
     font-size: 1rem;
     font-weight: 800;
     margin: 1rem auto;
-
   }
 }
 
