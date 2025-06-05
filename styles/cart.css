@@ -602,15 +602,6 @@ table.cart-table tbody td.qty-cell {
     font-size: 1.2rem;
   }
 
-  .cart-item .price-cell::before {
-    content: attr(data-price-text);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--primary-blue);
-    margin-bottom: 0.15rem;
-    white-space: nowrap;
-  }
-
   .cart-item .price-cell .remove-link {
     font-size: 0.9rem;
     font-weight: 400;
@@ -783,6 +774,3 @@ table.cart-table tbody td.qty-cell {
     margin: 1rem auto;
   }
 }
-
-
-

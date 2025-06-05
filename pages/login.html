@@ -13,8 +13,10 @@
 <link rel="stylesheet" href="../styles/homepage.css">
 <link rel="stylesheet" href="../styles/listofproduct.css">
 <link rel="stylesheet" href="../styles/responsive.css">
+<link rel="stylesheet" href="../styles/login.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="../script/main.js" defer></script>
+<script src="../script/checkout.js" defer></script>
 </head>
 
 <body>
@@ -23,13 +25,13 @@
      <div class="top-bar">
         <div class="container">
             <a href="#mobileNav" class="top-link menu-icon"><i class="fas fa-bars"></i></a>
-            <a href="#" class="top-link log-link"><i class="fa-regular fa-user"></i> <span>Log In/Sign Up</span></a>
-            <a href="#" class="top-link map-link"><i class="fas fa-map-marker-alt"></i> <span>Store Locator</span></a>
+           <a href="../pages/login.html" class="top-link log-link"><i class="fa-regular fa-user"></i> <span>Log In/Sign Up</span></a>
+            <a href="../pages/locator.html" class="top-link map-link"><i class="fas fa-map-marker-alt"></i> <span>Store Locator</span></a>
             <div class="logo"><a href="../homepage.html">
             <img src="../images/W_Cosmetic_logo_White_Long.webp" alt="W Cosmetics Logo" class="logo-img"></a>
             </div>
-            <a href="#" class="top-link heart-link"><i class="fas fa-heart"></i> <span>Wishlist</span></a>
-            <a href="#" class="top-link cart-link"><i class="fas fa-shopping-cart"></i> <span>Shopping Cart</span></a>
+            <a href="../pages/wishlist.html" class="top-link heart-link"><i class="fas fa-heart"></i> <span>Wishlist</span></a>
+            <a href="../pages/cart.html" class="top-link cart-link"><i class="fas fa-shopping-cart"></i> <span>Shopping Cart</span></a>
     </div>
     </div>
 
@@ -104,6 +106,44 @@
   </ul>
 </div>
 </header>
-    
+
+ <div class="breadcrumb">
+    <a href="../homepage.html" class="bc-home"><i class="fa-solid fa-house"></i></a>
+    <span class="bc-sep">&gt;</span>
+    <span class="bc-log">Log In/Sign Up</span>
+  </div>
+
+    <main class="login-container">
+    <div class="login-box">
+    <img src="../images/W-cos.avif" alt="W Cosmetics Logo" class="login-logo" />
+
+    <h1>LOG IN / SIGN UP</h1>
+      <p class="login-subtitle">
+        Welcome to W Cosmetics!<br />
+        Enter your email and we will send you a log in code.
+      </p>
+
+      <select id="emailSelect" class="email-select">
+        <option value="" selected disabled>Email:</option>
+        <option value="123@gmail.com">123@gmail.com</option>
+        </select>
+
+        <input type="text" id="codeInput" class="code-input hidden" placeholder="Code:" aria-label="Code"/>
+
+        <div login-set>
+        <a href="../pages/checkout.html" id="continueBtn" class="primary-btn"> CONTINUE WITH EMAIL</a>
+         <div class="or-divider">
+        <span>Or</span>
+      </div>
+      <a href="#" class="secondary-btn">CHECKOUT AS GUEST</a>
+    </div>
+    </div>
+  </main>
+
+  <footer>
+  <div class="container">
+      <p>&copy; 2025 W Cosmetics. Term of Use | Private Policy</p>
+      </div>
+</footer>
 </body>
 </html>

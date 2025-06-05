@@ -25,7 +25,7 @@
     font-size: 1.5rem;
     text-align: center;
     font-weight: 600;
-    background-color: #F1BCB6;
+    background-color: var(--button-pink);
     border: none;
     border-radius: 1rem;
     cursor: pointer;
@@ -33,11 +33,11 @@
     color: white
 }
 .add-to-cart:hover {
-    background-color: #f5b7b7;
+    background-color: var(--hover-pink);
 }
 
 .sold-out {
-    background-color: #E2E0E5;
+    background-color: var(--grey-back);
     color: #777477;
     font-size: 1.2rem;
     font-weight: 500;
@@ -48,7 +48,7 @@
 }
 
 .heart-icon, .wishlist-icon {
-    color: #F1BCB6;
+    color: var(--button-pink);
     border: none;
     font-size: 1.8rem;
     cursor: pointer;

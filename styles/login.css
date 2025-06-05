@@ -1,0 +1,181 @@
+html,body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--sky-blue);
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    background-color: var(--breadcrumb-blue);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+.breadcrumb .bc-home {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb .bc-sep {
+    margin: 0 0.7rem;
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb a, .bc-log {
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumb .bc-log {
+    font-weight: 600;
+}
+
+.login-container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  height: 70%;
+  padding: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.login-box {
+    text-align: center;
+}
+
+.login-logo{
+    width: 15rem;
+}
+
+.login-box h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.login-subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+}
+
+.email-select, .code-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.75rem 0.7rem;
+  background-color: var(--grey-back);
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.primary-btn {
+   background-color: var(--primary-blue);
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 1rem 5rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.secondary-btn {
+   background-color: var(--primary-blue);
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 1rem 6rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.or-divider span {
+  padding: 0 0.75rem;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #000;
+  font-weight: bold;
+}
+
+
+@media (max-width:391px) {
+
+    .breadcrumb {
+        display: hidden;
+    }
+
+    .login-container {
+       margin-top: 5rem;
+       margin-bottom: 5rem;;
+    }
+
+    .login-logo {
+        width: 6rem;
+    }
+       
+    .login-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .login-subtitle {
+        margin-bottom: 1rem;
+    }
+
+    .email-input, .code-input {
+       padding: 0.6rem 0.8rem;      
+       font-size: 0.9rem;         
+       margin-bottom: 0.75rem;     
+    }
+
+    .primary-btn {
+      font-size: 1.1rem;          
+      padding: 0.65rem 0.8rem;  
+      margin-bottom: 1rem;  
+      border-radius: 0.5rem;  
+  }
+
+  .secondary-btn {
+      font-size: 1.1rem;          
+      padding: 0.65rem 0.8rem;  
+      margin-bottom: 1rem;   
+      border-radius: 0.5rem;   
+  }
+
+    .or-divider {
+    font-size: 0.8rem;
+    margin: 0.8rem 0;           
+  }
+}
+
+
+
+

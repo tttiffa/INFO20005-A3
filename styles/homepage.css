@@ -494,7 +494,7 @@ border: none;
     padding: 0.8rem 0.8rem;
     font-size: 1.3rem;
     font-weight: bold;
-    background-color: #F1BCB6;
+    background-color: var(--button-pink);
     border: none;
     border-radius: 1rem;
     cursor: pointer;
@@ -580,11 +580,6 @@ border: none;
     margin-top: 1rem;
     padding: 0.5rem 0.8rem;
     border-radius: 0.8rem;
-}
-
-.social-item:hover {
-    transform: scale(1.1);
-    color: #F37A7A;
 }
 
 /* Utility Buttons */

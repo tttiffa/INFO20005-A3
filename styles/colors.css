@@ -3,10 +3,12 @@
     --hover-light: #FFDFDF;
     --primary-pink: #F2ECEC;
     --tile-blue: #91BBDA;
-    --sky-blue: #D1E5F5;
+    --sky-blue: #DDE9F5;
     --button-pink: #F3B7AD;
     --text-dark: #565354;
     --breadcrumb-blue:#B6CEE1;
+    --hover-pink:#F5B7B7;
+    --grey-back: #CCCCCC;
 }
 
 .top-bar a{
