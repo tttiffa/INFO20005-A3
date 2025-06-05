@@ -49,6 +49,7 @@ html,body{
   gap: 2rem;
   margin-top: 2rem;
 }
+
 .image-section {
   flex: 1;
   display: flex;
@@ -291,7 +292,11 @@ html,body{
   padding: 0.75rem 2rem;                             
 }
 
-@media screen and (max-width: 391px) {
+@media (max-width: 391px) {
+html,body {
+    overflow: hidden;
+}
+
 .breadcrumb {
     font-size: 1rem;
 }
