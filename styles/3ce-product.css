@@ -274,7 +274,8 @@ html,body{
 }
 
 .buy-it-now {                  
-  margin-top: 1rem;                               
+  margin-top: 1rem; 
+  text-decoration: none;                              
 }
 
 @media (max-width: 391px) {
@@ -397,10 +398,11 @@ html,body {
     margin-right: 0.5rem;
 }
 
-.buy-it-now {
+.actions .buy-it-now {
     font-size: 1rem;
     margin: 0.5rem auto;
     max-width: 80%;
     width: 100%;
+    text-decoration: none;
 }
 }

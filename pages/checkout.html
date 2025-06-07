@@ -14,8 +14,12 @@
 <link rel="stylesheet" href="../styles/homepage.css">
 <link rel="stylesheet" href="../styles/listofproduct.css">
 <link rel="stylesheet" href="../styles/responsive.css">
+<link rel="stylesheet" href="../styles/checkout.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="../script/main.js" defer></script>
+<script src="../script/cart.js" defer></script>
+<script src="../script/checkout.js" defer></script>
+
 </head>
 
 <body>
@@ -104,7 +108,154 @@
   </ul>
 </div>
 </header>
-    
-</body>
 
+<nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../homepage.html" class="bc-home"><i class="fa-solid fa-house"></i></a>
+    <span class="bc-sep">></span>
+    <a href="../pages/cart.html" class="bc-cart">Shopping Cart</a>
+    <span class="bc-sep">></span>
+    <span class="bc-checkout">Checkout</span>
+    </nav>
+
+    <h1 class="checkout-title"> CHECKOUT </h1>
+
+<div class="checkout-page">
+  <div class="order-summary-bar">
+    <div class="summary-header" id="summaryToggle">
+      <span class="summary-title">Order Summary</span>
+       <span class="toggle-icon">▼</span>
+       <span class="summary-total" id="summaryTotal">$0.00</span>
+        </div>
+       <div class="summary-content" id="summaryContent">
+        <ul id="summaryList">
+        </ul>
+        <div class="summary-footer">
+          <strong>Total:</strong> <span id="summarySum">$0.00</span>
+       </div>
+    </div>
+  </div>
+
+  <main class="checkout-main">
+    <div class="step-header">
+      <button class="step-btn" data-step="1">1. Information</button>
+      <button class="step-btn" data-step="2">2. Shipping</button>
+      <button class="step-btn" data-step="3">3. Payment</button>
+    </div>
+
+
+    <section class="step-panel" id="step1">
+      <h3>Contact &amp; Information: </h3>
+      <form id="formInfo">
+          <div class="form-group">
+            <label for="infoEmail">Contact (Email):</label>
+            <input type="email" id="infoEmail" name="email" list="presetEmail" required>
+            <datalist id="presetEmail">
+              <option value="123@gmail.com"></option>
+              <option value="ziyan1@gmail.com"></option>
+            </datalist>
+          </div>
+          <div class="form-group-inline">
+            <div>
+              <label for="infoFirstName">First Name:</label>
+              <input type="text" id="infoFirstName" name="firstName" list="presetFirstName" required>
+              <datalist id="presetFirstName">
+              <option value="Ziyan"></option>
+              </datalist>
+            </div>
+
+            <div>
+              <label for="infoLastName">Last Name:</label>
+              <input type="text" id="infoLastName" name="lastName" list="presetLastName" required>
+              <datalist id="presetLastName">
+                <option value="Zhang"></option>
+                </datalist>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="infoCompany">Company (Optional):</label>
+            <input type="text" id="infoCompany" name="company">
+          </div>
+          <div class="form-group">
+            <label for="infoAddress">Address:</label>
+            <input type="text" id="infoAddress" name="address" list="presetAddress" required>
+            <datalist id="presetAddress">
+              <option value="123 Watts Street"></option>
+              </datalist>
+          </div>
+          <div class="form-group-inline">
+            <div>
+              <label for="infoCity">City:</label>
+              <input type="text" id="infoCity" name="city" list="presetCity" required>
+              <datalist id="presetCity">
+                <option value="Parkville"></option>
+                </datalist>
+            </div>
+            <div>
+              <label for="infoPostcode">Postcode:</label>
+              <input type="text" id="infoPostcode" name="postcode" list="presetPostcode" required>
+              <datalist id="presetPostcode">
+                <option value="3000"></option>
+                </datalist>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="infoPhone">Phone:</label>
+            <input type="tel" id="infoPhone" name="phone" list="presetPhone" required>
+            <datalist id="presetPhone">
+              <option value="0123456789"></option>
+              </datalist>
+          </div>
+          <button type="button" class="btn-primary next-btn" data-next="2">
+            CONTINUE TO SHIPPING
+          </button>
+        </form>
+      </section>
+
+            <section class="step-panel hidden" id="step2">
+              <h3>Shipping</h3>
+              <div class="info-summary">
+          <p><strong>Contact:</strong> <span id="displayEmail"></span>
+            <button class="btn-change" id="changeInfo">Change</button>
+          </p>
+          <p><strong>Ship to:</strong> <span id="displayAddress"></span></p>
+          <p><strong>Shipping Method:</strong></p>
+        </div>
+
+        <div class="shipping-methods">
+            <button class="ship-btn selected" data-value="standard">
+            <span class="ship-label">Less Than 99 AUD</span>
+            <span class="ship-price">$7.99</span>
+          </button>
+          <button class="ship-btn disabled" data-value="free">
+            <span class="ship-label">Free Shipping</span>
+            <span class="ship-price">N/A</span>
+          </button>
+        </div>
+        <button class="btn-primary next-btn" data-next="3">Continue to Payment</button>
+            </section>
+
+            <section class="step-panel hidden" id="step3">
+        <h3>Payment</h3>
+        <div class="info-summary">
+          <p><strong>Contact:</strong> <span id="displayEmail2"></span></p>
+          <p><strong>Ship to:</strong> <span id="displayAddress2"></span></p>
+          <p><strong>Shipping Method:</strong> <span id="displayShipMethod"></span></p>
+        </div>
+        <fieldset class="payment-methods">
+          <legend>Select Payment Method:</legend>
+          <label><input type="radio" name="paymentMethod" value="paypal" checked> PayPal</label>
+          <label><input type="radio" name="paymentMethod" value="creditcard"> Credit Card</label>
+          <label><input type="radio" name="paymentMethod" value="afterpay"> AfterPay</label>
+        </fieldset>
+        <button class="btn-primary" id="submitPayment">Proceed to Payment</button>
+      </section>
+    </main>        
+</div>
+
+<footer>
+  <div class="container">
+      <p>&copy; 2025 W Cosmetics. Term of Use | Private Policy</p>
+      </div>
+</footer>    
+</body>
 </html>
