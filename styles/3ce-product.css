@@ -278,28 +278,27 @@ html,body{
   text-decoration: none;                              
 }
 
-/* productpage.css */
 #cartMessagePopup {
-    position: fixed; /* 固定定位，使其不随页面滚动 */
+    position: fixed; 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 居中显示 */
+    transform: translate(-50%, -50%); 
     background-color: white;
     padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* 确保在其他内容之上 */
+    z-index: 1000;
     font-size: 1.2em;
     color: #333;
     text-align: center;
-    display: none; /* 默认隐藏 */
-    opacity: 0; /* 用于平滑过渡 */
-    transition: opacity 0.2s ease-in-out; /* 添加过渡效果 */
+    display: none;
+    opacity: 0; 
+    transition: opacity 0.2s ease-in-out; 
 }
 
 #cartMessagePopup.show {
-    display: block; /* 显示 */
-    opacity: 1; /* 完全不透明 */
+    display: block; 
+    opacity: 1; 
 }
 
 

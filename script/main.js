@@ -139,7 +139,8 @@ showBanner(currentIndex);
         faceSub.classList.remove('show');
       }
 
-    });
+});
+
 
 
     
