@@ -10,6 +10,7 @@ html,body {
   display: flex;
   flex-direction: column; 
   background-color: var(--primary-pink);
+  width: 100%;
 }
 
 /* --- Breadcrumb --- */
@@ -50,6 +51,7 @@ html,body {
 
 .order-summary-bar {
   width: 100%;
+  margin: 0 auto;
 }
 
 .checkout-title {
@@ -387,17 +389,113 @@ html,body {
   color: white;
   cursor: pointer;
   font-size: 1.3rem;
-    padding: 0.5rem 2rem;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    border:none;
-    transition: opacity 0.2s;
-    margin: 0 auto;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border:none;
+  transition: opacity 0.2s;
+  margin: 0 auto;
 }
 
 .btn-primary:hover {
   opacity: 0.9;
 }
+
+@media (max-width: 391px) {
+  .checkout-page {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .order-summary-bar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .summary-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .summary-total {
+    display: none;
+  }
+
+  .summary-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .summary-content.expanded {
+    max-height: 500px; 
+  }
+
+
+  .checkout-main {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+
+  .step-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  
+  .step-btn {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1rem;
+    padding: 0.6rem 0;
+  }
+
+
+  .step-panel {
+    margin: 0 auto;
+    margin-left: 1rem;
+    width: 80%;
+  }
+
+
+  .info-summary p {
+    font-size: 0.9rem;
+  }
+
+
+  .form-group-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-group-inline > div {
+    width: 100%;
+  }
+  .form-group input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+
+  .shipping-methods {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .ship-btn {
+    flex: 0 0 48%;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+
+  .payment-methods {
+    padding: 0.5rem;
+  }
+
+}
+
 
 
 
