@@ -1,235 +1,126 @@
-/*The free shipping section*/
-const FREE_SHIPPING_THRESHOLD = 100;
+document.addEventListener('DOMContentLoaded', () => {
+  // —— 1. 读取并规范化旧数据 —— 
+  let items = JSON.parse(localStorage.getItem('cartItems') || '[]')
+    .map(item => {
+      const quantity = Number.isFinite(item.quantity)
+        ? item.quantity
+        : Number.isFinite(item.qty)
+        ? item.qty
+        : 1;
+      const color = item.color || item.colour || 'Default';
+      const name = item.sub
+        ? `${item.name} ${item.sub}`
+        : item.name || 'Unknown Product';
+      const price = Number.isFinite(item.price) ? item.price : 0;
+      const imageUrl = item.imageUrl || '../images/placeholder.png';
+      return { id: item.id, name, price, color, quantity, imageUrl };
+    })
+    .filter(i => i.name && i.price > 0);
 
-document.addEventListener("DOMContentLoaded", () => {
-  /*Connect item number and remove*/
-  bindCartRowEvents();
-  recalcCart();
-});
+  // —— 2. 拿 DOM 钩子 —— 
+  const tbody            = document.getElementById('cart-tbody');
+  const itemCountElem    = document.getElementById('header-item-count');
+  const subtotalElem     = document.getElementById('subtotal-amount');
+  const shippingMsg      = document.getElementById('shipping-msg');
+  const shippingProgress = document.getElementById('shipping-progress');
 
-function bindCartRowEvents() {
-  const cartRows = document.querySelectorAll(".cart-item");
+  const THRESHOLD = 99;
 
-  cartRows.forEach((row) => {
-    const qtyNumberEl = row.querySelector(".qty-control .qty-number");
-    const minusBtn = row.querySelector(".qty-control .minus");
-    const plusBtn = row.querySelector(".qty-control .plus");
-    const removeLink = row.querySelector(".remove-link");
-    const priceCell = row.querySelector(".price-cell");
-
-    /*Read single price from data list*/
-    const unitPrice = parseFloat(priceCell.getAttribute("data-price")) || 0;
-
-   /*Only minus when the amount is >1 */
-    minusBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      let currentQty = parseInt(qtyNumberEl.textContent, 10);
-      if (currentQty > 1) {
-        currentQty--;
-        qtyNumberEl.textContent = currentQty;
-        updateRowPrice(priceCell, unitPrice, currentQty);
-        recalcCart();
-      }
-    });
-
-   /* "+" button : +1 */
-    plusBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      let currentQty = parseInt(qtyNumberEl.textContent, 10);
-      currentQty++;
-      qtyNumberEl.textContent = currentQty;
-      updateRowPrice(priceCell, unitPrice, currentQty);
-      recalcCart();
-    });
-
-    /* Remove link */
-    removeLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      row.remove();
-      recalcCart();
-    });
-
-    const initialQty = parseInt(qtyNumberEl.textContent, 10) || 1;
-    updateRowPrice(priceCell, unitPrice, initialQty);
-  });
-}
-
-/*Update price and quantity information for each item */
-function updateRowPrice(priceCell, unitPrice, qty) {
-  const lineTotal = unitPrice * qty;
-  const formattedTotal = `$${lineTotal.toFixed(2)}`;
-
-  const removeAnchor = priceCell.querySelector(".remove-link");
-
-  priceCell.textContent = "";
-  priceCell.appendChild(document.createTextNode(formattedTotal));
-  priceCell.appendChild(document.createElement("br"));
-  priceCell.appendChild(removeAnchor);
-
- /* update information data-price-text attribute simultaneously */
-  priceCell.setAttribute("data-price-text", formattedTotal);
-}
-
-function recalcCart() {
-  const cartRows = document.querySelectorAll(".cart-item");
-  const shippingMsgEl = document.getElementById("shipping-msg");
-  const progressEl = document.getElementById("shipping-progress");
-  const subtotalEl = document.getElementById("subtotal-amount");
-  const headerCountEl = document.getElementById("header-item-count");
-
-/* When the cart is empty */
-  if (cartRows.length === 0) {
-    if (shippingMsgEl) {
-      shippingMsgEl.textContent = "You are $99 away from free shipping! Don't miss out!";
-    }
-    /*Hide the progress bar */
-    if (progressEl) {
-      progressEl.style.width = "0%";
-    }
-    /*Update price of the side bar */
-    if (subtotalEl) {
-      subtotalEl.textContent = "$0.00";
-    }
-    if (headerCountEl) {
-      headerCountEl.textContent = "0";
-    }
-    return; 
-  }
-
-/* Calculate the sub total */
-  let subtotal = 0;
-  cartRows.forEach((row) => {
-    const priceCell = row.querySelector(".price-cell");
-    const priceText = priceCell.getAttribute("data-price-text") ||
-                      priceCell.textContent.trim().split("\n")[0] ||
-                      "$0.00";
-    const priceNum = parseFloat(priceText.replace(/^\$/, "")) || 0;
-    subtotal += priceNum;
-  });
-
-  if (subtotalEl) {
-    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-  }
-/* Update the number of items in the header */
-  if (headerCountEl) {
-    headerCountEl.textContent = cartRows.length;
-  }
-
- /*Update shipping message */
-  if (shippingMsgEl && progressEl) {
-    if (subtotal >= FREE_SHIPPING_THRESHOLD) {
-      shippingMsgEl.textContent = "Congrats! You got free shipping!";
-      progressEl.style.width = "100%";
-    } else {
-      const remain = (FREE_SHIPPING_THRESHOLD - subtotal).toFixed(2);
-      shippingMsgEl.textContent = `You are $${remain} away from free shipping!`;
-      const percent = Math.floor((subtotal / FREE_SHIPPING_THRESHOLD) * 100);
-      progressEl.style.width = `${percent}%`;
-    }
-  }
-}
-
-// cart-page.js
-
-document.addEventListener("DOMContentLoaded", () => {
-  // —— 1. 读取 localStorage 或初始化空数组 —— 
-  let cartItems = JSON.parse(localStorage.getItem("cartItems") || "[]");
-
-  // —— 2. 保存到 localStorage —— 
-  function saveCart() {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }
-
-  // —— 3. 渲染购物车列表 —— 
-  function renderCart() {
-    const list = document.getElementById("cartList");
-    list.innerHTML = "";
-    cartItems.forEach(item => {
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <img src="${item.imageUrl}" alt="${item.name}" class="cart-img" />
-        <div class="cart-info">
-          <h3>${item.name}</h3>
-          <p>${item.sub}</p>
-          <div class="qty-control">
-            <button class="decrease" data-id="${item.id}">−</button>
-            <span class="qty-value">${item.qty}</span>
-            <button class="increase" data-id="${item.id}">+</button>
+  // —— 3. 渲染行 —— 
+  function renderRows(list) {
+    tbody.innerHTML = '';
+    list.forEach(item => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="product-cell">
+          <div class="product-info">
+            <img src="${item.imageUrl}" alt="${item.name}" class="cart-img">
+            <div>
+              <p class="product-brand">${item.name}</p>
+              <p class="product-color">Colour: ${item.color}</p>
+            </div>
           </div>
-          <span class="price">$${(item.price * item.qty).toFixed(2)}</span>
-          <button class="remove" data-id="${item.id}">Remove</button>
-        </div>
+        </td>
+        <td class="qty-cell">
+          <div class="cart-qty">
+            <button class="qty-btn decrease" data-id="${item.id}">-</button>
+            <input type="text"
+                   class="qty-input"
+                   data-id="${item.id}"
+                   value="${item.quantity}"
+                   readonly>
+            <button class="qty-btn increase" data-id="${item.id}">+</button>
+          </div>
+        </td>
+
+        <td class="price-cell">
+          <div>$${(item.price * item.quantity).toFixed(2)}</div>
+          <button class="remove-btn" data-id="${item.id}">Remove</button>
+        </td>
       `;
-      list.appendChild(li);
-    });
-    bindCartEvents();
-  }
-
-  // —— 4. 绑定增减和删除按钮 —— 
-  function bindCartEvents() {
-    document.querySelectorAll(".increase").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = +btn.dataset.id;
-        const it = cartItems.find(x => x.id === id);
-        it.qty++;
-        saveCart();
-        renderCart();
-      });
-    });
-    document.querySelectorAll(".decrease").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = +btn.dataset.id;
-        const it = cartItems.find(x => x.id === id);
-        if (it.qty > 1) it.qty--;
-        saveCart();
-        renderCart();
-      });
-    });
-    document.querySelectorAll(".remove").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = +btn.dataset.id;
-        cartItems = cartItems.filter(x => x.id !== id);
-        saveCart();
-        renderCart();
-      });
+      tbody.appendChild(tr);
     });
   }
 
-  /*Helped the checkout page to get item total price for the free shipping criteria*/
-  window.addToCart = function(item) {
-    const exist = cartItems.find(x => x.id === item.id);
-    if (exist) {
-      exist.qty++;
+  // —— 4. 更新件数、小计、进度条与提示 —— 
+  function updateSummary(list) {
+    const totalQty = list.reduce((sum, i) => sum + i.quantity, 0);
+    const subtotal = list.reduce((sum, i) => sum + i.price * i.quantity, 0);
+
+    itemCountElem.textContent = totalQty;
+    subtotalElem.textContent  = `$${subtotal.toFixed(2)}`;
+
+    // 进度条：空车时也设为 0%
+    const pct = list.length === 0
+      ? 0
+      : Math.min((subtotal / THRESHOLD) * 100, 100);
+    shippingProgress.style.width = pct + '%';
+
+    // 提示文字
+    if (list.length === 0) {
+      // 购物车空时也显示这条
+      shippingMsg.textContent =
+        `You are $${THRESHOLD} away from free shipping! Don't miss out!`;
+    } else if (subtotal >= THRESHOLD) {
+      shippingMsg.textContent = 'Congrats! You got the free shipping!';
     } else {
-      cartItems.push({ ...item, qty: 1 });
+      shippingMsg.textContent =
+        `Only $${(THRESHOLD - subtotal).toFixed(2)} away from free shipping!`;
     }
-    saveCart();
-    renderCart();
-  };
-  
-  renderCart();
-});
+  }
 
-function recalcCart() {
-  const cartRows = document.querySelectorAll(".cart-item");
-  // … 你现有的小计、进度条、头部数目那些逻辑 …
+  // 初始渲染
+  renderRows(items);
+  updateSummary(items);
 
-  // ——— 新增：把当前表格里的所有商品收集到一个数组 ———
-  const itemsForStorage = Array.from(cartRows).map(row => {
-    // 假设每行有 data-product-id, .brand-name, .product-title, .product-color, .qty-number, data-price
-    const id      = row.dataset.productId;
-    const name    = row.querySelector(".brand-name").textContent;
-    const sub     = row.querySelector(".product-title").textContent;
-    const colour  = row.querySelector(".product-color").textContent.replace("Colour: ", "");
-    const qty     = parseInt(row.querySelector(".qty-number").textContent, 10);
-    const unit    = parseFloat(row.querySelector(".price-cell").dataset.price) || 0;
-    const imageEl = row.querySelector(".product-info img");
-    const imageUrl= imageEl ? imageEl.src : "";
-    return { id, name, sub, colour, price: unit, qty, imageUrl };
+  // —— 5. 事件委托：数量按钮 & Remove —— 
+  tbody.addEventListener('click', e => {
+    const id = e.target.dataset.id;
+
+    // 增减数量
+    if (e.target.matches('.qty-btn')) {
+      const dir = e.target.classList.contains('increase') ? 1 : -1;
+      const idx = items.findIndex(i => i.id == id);
+      if (idx === -1) return;
+      items[idx].quantity = Math.max(1, items[idx].quantity + dir);
+      localStorage.setItem('cartItems', JSON.stringify(items));
+
+      // 更新行内显示
+      const input    = tbody.querySelector(`.qty-input[data-id="${id}"]`);
+      const priceDiv = input.closest('tr').querySelector('.price-cell > div');
+      input.value    = items[idx].quantity;
+      priceDiv.textContent = `$${(items[idx].price * items[idx].quantity).toFixed(2)}`;
+
+      // 更新汇总
+      updateSummary(items);
+    }
+
+    // 移除商品
+    if (e.target.matches('.remove-btn')) {
+      items = items.filter(i => i.id != id);
+      localStorage.setItem('cartItems', JSON.stringify(items));
+      renderRows(items);
+      updateSummary(items);
+    }
   });
-
-  // 存到 localStorage
-  localStorage.setItem("cartItems", JSON.stringify(itemsForStorage));
-}
-
-
+});

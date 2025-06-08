@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../styles/banila-product.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="../script/main.js" defer></script>
+<script src="../script/cart.js" defer></script>
 <script src="../script/productpage.js" defer></script>
 </head>
 
@@ -184,7 +185,10 @@
           <input type="text" class="qty-input" value="1" readonly>
           <button class="qty-btn" data-action="increase">+</button>
         </div>
-          <button class="add-to-cart">ADD TO CART</button>
+          <button class="add-to-cart" id="addToCartBtn">ADD TO CART</button>
+             <div id="cartMessagePopup">
+         This item is added to cart.
+        </div>
           <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
           </div>
           <a href="../pages/login.html" class="buy-it-now">BUY IT NOW</a>

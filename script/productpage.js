@@ -1,96 +1,148 @@
-/* The transition of produce images animation*/
 document.addEventListener('DOMContentLoaded', () => {
 
-  /*Grab all the thumb buttons using querySelectorAll*/
-  const thumbBtns = document.querySelectorAll('.thumb-btn');
-  
-  /*Grab the main/primary image*/
-  const mainImg = document.querySelector('.image-main .main-img');
-  
-  /*Grab left and right arrow buttons*/
-  const prevBtn = document.querySelector('.image-main .img-nav.prev');
-  const nextBtn = document.querySelector('.image-main .img-nav.next');
+    /* The image sliding effect*/
+    const thumbBtns = document.querySelectorAll('.thumb-btn');
+    const mainImg = document.querySelector('.image-main .main-img');
+    const prevBtn = document.querySelector('.image-main .img-nav.prev');
+    const nextBtn = document.querySelector('.image-main .img-nav.next');
 
-  /*Collected all the image addresses and save them based on the orders */
-  const imageSrcList = Array.from(thumbBtns).map(btn => {
-    const img = btn.querySelector('img');
-    return img ? img.getAttribute('src') : '';
-  });
-
-/*The index of images: Start from  */
-  let currentIndex = 0;
-
-  function updateMainImage(index) {
-    if (index < 0) {
-      index = imageSrcList.length - 1;
-    } else if (index >= imageSrcList.length) {
-      index = 0;
-    }
-    currentIndex = index; 
-
-   /*Change to the primary image */
-    mainImg.setAttribute('src', imageSrcList[index]);
-
-    thumbBtns.forEach(btn => btn.classList.remove('active'));
-    thumbBtns[index].classList.add('active');
-  }
-
-  thumbBtns.forEach((btn, idx) => {
-    btn.addEventListener('click', () => {
-      updateMainImage(idx);
+    const imageSrcList = Array.from(thumbBtns).map(btn => {
+        const img = btn.querySelector('img');
+        return img ? img.getAttribute('src') : '';
     });
-  });
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      updateMainImage(currentIndex - 1);
-    });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      updateMainImage(currentIndex + 1);
-    });
-  }
+    let currentIndex = 0;
 
-  /*The quantity button */
-  const qtyBtns = document.querySelectorAll('.qty-btn');
-  const qtyInput = document.querySelector('.qty-input');
+    function updateMainImage(index) {
+        if (imageSrcList.length === 0) return;
 
-  qtyBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-    /*Data action: Decrease or Increase*/
-      const action = btn.getAttribute('data-action');
-      let currentQty = parseInt(qtyInput.value) || 1;
-
-      if (action === 'decrease') {
-        /* Decrease if more than 1, otherwise plus 1 */
-        if (currentQty > 1) {
-          currentQty--;
+        if (index < 0) {
+            index = imageSrcList.length - 1;
+        } else if (index >= imageSrcList.length) {
+            index = 0;
         }
-      } else if (action === 'increase') {
-        /* Plus one when pressed the '+' button*/
-        currentQty++;
+        currentIndex = index;
+
+        mainImg.setAttribute('src', imageSrcList[index]);
+
+        thumbBtns.forEach(btn => btn.classList.remove('active'));
+        if (thumbBtns[index]) {
+            thumbBtns[index].classList.add('active');
+        }
+    }
+
+    thumbBtns.forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+            updateMainImage(idx);
+        });
+    });
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            updateMainImage(currentIndex - 1);
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            updateMainImage(currentIndex + 1);
+        });
+    }
+
+    // Initialize main image
+    updateMainImage(0);
+
+
+    /* quantity add and minus logiv */
+    const qtyInput = document.querySelector('.qty-input');
+    const decreaseQtyBtn = document.querySelector('.qty-btn[data-action="decrease"]');
+    const increaseQtyBtn = document.querySelector('.qty-btn[data-action="increase"]');
+
+    if (decreaseQtyBtn && qtyInput) {
+        decreaseQtyBtn.addEventListener('click', () => {
+            let currentQty = parseInt(qtyInput.value) || 1;
+            if (currentQty > 1) {
+                qtyInput.value = currentQty - 1;
+            }
+        });
+    }
+
+    if (increaseQtyBtn && qtyInput) {
+        increaseQtyBtn.addEventListener('click', () => {
+            let currentQty = parseInt(qtyInput.value) || 1;
+            qtyInput.value = currentQty + 1;
+        });
+    }
+
+
+    /* The colour selector of the product */
+    const colorSwatches = document.querySelectorAll('.color-options .swatch-btn');
+    let selectedColor = '';
+
+    if (colorSwatches.length > 0) {
+        const initialActiveSwatch = document.querySelector('.color-options .swatch-btn.active');
+        if (initialActiveSwatch) {
+            selectedColor = initialActiveSwatch.dataset.color;
+        } else {
+            colorSwatches[0].classList.add('active');
+            selectedColor = colorSwatches[0].dataset.color;
+        }
+
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', () => {
+                colorSwatches.forEach(s => s.classList.remove('active'));
+                swatch.classList.add('active');
+                selectedColor = swatch.dataset.color;
+            });
+        });
+    } else {
+        selectedColor = "/";
+    }
+
+
+    /* --- Add to Cart (popup message and local storage) --- */
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const cartMessagePopup = document.getElementById('cartMessagePopup');
+
+    if (addToCartBtn && cartMessagePopup) {
+        addToCartBtn.addEventListener('click', () => {
+          /*Showing the pop up */
+            cartMessagePopup.classList.add('show');
+    
+
+            /*Collect shopping item information*/
+            const productNameElement = document.querySelector('.product-des .product-title');
+            const productPriceElement = document.querySelector('.product-des .price');
+
+            const productName = productNameElement ? productNameElement.textContent.trim() : "Unknown Product";
+            const productPrice = productPriceElement ? parseFloat(productPriceElement.textContent.replace('$', '').trim()) : 0;
+            const quantity = qtyInput ? parseInt(qtyInput.value) : 1;
+
+            const product = {
+                id: Date.now(),
+                name: productName,
+                price: productPrice,
+                color: selectedColor,
+                quantity: quantity,
+                imageUrl: imageSrcList[currentIndex]
+            };
+
+            /*Save the products information locallly*/
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            const existingItemIndex = cartItems.findIndex(item => item.name === product.name && item.color === product.color);
+
+            if (existingItemIndex > -1) {
+                cartItems[existingItemIndex].quantity += product.quantity;
+            } else {
+                cartItems.push(product);
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            /*Hide the pop up in 2 seconds*/
+            setTimeout(() => {
+                cartMessagePopup.classList.remove('show');
+            }, 1500);
+        });
       }
-      /*Upgraded to the input bar */
-      qtyInput.value = currentQty;
-    });
-  });
 });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    //*Grab all the buttons*/
-    const swatches = document.querySelectorAll('.swatch-btn');
-    /*Grab hidden button and input */
-    const hiddenInput = document.getElementById('selected-colour');
-
-    swatches.forEach(button => {
-      button.addEventListener('click', () => {
-        /*Get rid of buttons*/
-        swatches.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        hiddenInput.value = button.getAttribute('data-color');
-      });
-    });
-  });
-
-

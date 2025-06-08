@@ -292,6 +292,30 @@ html,body{
   padding: 0.75rem 2rem;                             
 }
 
+/* productpage.css */
+#cartMessagePopup {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    font-size: 1.2em;
+    color: black;
+    text-align: center;
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#cartMessagePopup.show {
+    display: block; 
+    opacity: 1; 
+}
+
 @media (max-width: 391px) {
 html,body {
     overflow: hidden;

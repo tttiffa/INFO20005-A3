@@ -298,18 +298,18 @@
 
 /*quantity cell*/
 
-.qty-control {
+.cart-qty {
     display: inline-flex;
     align-items: center;
     background-color: white;
-    border-radius: 4rem;
     overflow: hidden;
+    border: none;
+    border-radius: 0.5rem;
 
 }
 
-.qty-control button.minus,
-.qty-control button.plus {
-    background-color: transparent;
+.qty-btn.decrease, .qty-btn.increase {
+    background-color: white;
     border: none;
     padding: 0.5rem 1.2rem;
     height: 100%;
@@ -318,16 +318,16 @@
     transition: background-color 0.2s ease;
 }
 
-.qty-control button.minus:hover,
-.qty-control button.plus:hover {
+.qty-btn.decrease:hover, .qty-btn.increase:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.qty-control .qty-number {
+.qty-input {
     display: inline-block;
     width: 2rem;
     text-align: center;
     font-size: 1rem;
+    border: none;
 }
 
 .price-cell {
@@ -336,13 +336,15 @@
     color: var(--primary-blue);
 }
 
-.remove-link {
+.remove-btn {
     display: block;
     color: black;
     font-weight: 300;
     text-decoration: underline;
     font-size: 1rem;
     margin-top: 0.25rem;
+    background-color: transparent;
+    border: none;
 }
 
 table.cart-table tbody td.price-cell,
@@ -382,14 +384,9 @@ table.cart-table tbody td.qty-cell {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-
-    transition: transform 0.2s ease;
     position: relative; /* For positioning the NEW tag */
 }
 
-.product-item:hover {
-    transform: translateY(-5px);
-}
 
 .product-item img {
     max-width: 100%;
@@ -439,7 +436,6 @@ table.cart-table tbody td.qty-cell {
     font-size: 1rem;
     margin-top: 0.5rem;
     flex-grow: 1;
-    transition: background-color 0.3s ease;
 }
 
 .heart-icon {
