@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // —— 1. 读取并规范化旧数据 —— 
+/*Read and normalise the old data*/
   let items = JSON.parse(localStorage.getItem('cartItems') || '[]')
     .map(item => {
       const quantity = Number.isFinite(item.quantity)
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .filter(i => i.name && i.price > 0);
 
-  // —— 2. 拿 DOM 钩子 —— 
+  /*Grab DOMs*/
   const tbody            = document.getElementById('cart-tbody');
   const itemCountElem    = document.getElementById('header-item-count');
   const subtotalElem     = document.getElementById('subtotal-amount');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const THRESHOLD = 99;
 
-  // —— 3. 渲染行 —— 
+/*Rendering statements*/
   function renderRows(list) {
     tbody.innerHTML = '';
     list.forEach(item => {
@@ -47,8 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <input type="text"
                    class="qty-input"
                    data-id="${item.id}"
-                   value="${item.quantity}"
-                   readonly>
+                   value="${item.quantity}" readonly>
             <button class="qty-btn increase" data-id="${item.id}">+</button>
           </div>
         </td>
@@ -61,8 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tbody.appendChild(tr);
     });
   }
-
-  // —— 4. 更新件数、小计、进度条与提示 —— 
+/*Update all the information in the summary list*/
   function updateSummary(list) {
     const totalQty = list.reduce((sum, i) => sum + i.quantity, 0);
     const subtotal = list.reduce((sum, i) => sum + i.price * i.quantity, 0);
@@ -70,15 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
     itemCountElem.textContent = totalQty;
     subtotalElem.textContent  = `$${subtotal.toFixed(2)}`;
 
-    // 进度条：空车时也设为 0%
+   /* 0% in progress bar when there is zero item*/
     const pct = list.length === 0
       ? 0
       : Math.min((subtotal / THRESHOLD) * 100, 100);
     shippingProgress.style.width = pct + '%';
 
-    // 提示文字
+    /*Free shipping message*/
     if (list.length === 0) {
-      // 购物车空时也显示这条
+      /*Show this when the cart is empty*/
       shippingMsg.textContent =
         `You are $${THRESHOLD} away from free shipping! Don't miss out!`;
     } else if (subtotal >= THRESHOLD) {
@@ -89,15 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 初始渲染
+/*Initial rendering*/
   renderRows(items);
   updateSummary(items);
 
-  // —— 5. 事件委托：数量按钮 & Remove —— 
+  /*Remove and quantiy button*/ 
   tbody.addEventListener('click', e => {
     const id = e.target.dataset.id;
 
-    // 增减数量
     if (e.target.matches('.qty-btn')) {
       const dir = e.target.classList.contains('increase') ? 1 : -1;
       const idx = items.findIndex(i => i.id == id);
@@ -105,17 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
       items[idx].quantity = Math.max(1, items[idx].quantity + dir);
       localStorage.setItem('cartItems', JSON.stringify(items));
 
-      // 更新行内显示
       const input    = tbody.querySelector(`.qty-input[data-id="${id}"]`);
       const priceDiv = input.closest('tr').querySelector('.price-cell > div');
       input.value    = items[idx].quantity;
       priceDiv.textContent = `$${(items[idx].price * items[idx].quantity).toFixed(2)}`;
 
-      // 更新汇总
+      /*Update Summary*/
       updateSummary(items);
     }
 
-    // 移除商品
+    /*Remove items*/
     if (e.target.matches('.remove-btn')) {
       items = items.filter(i => i.id != id);
       localStorage.setItem('cartItems', JSON.stringify(items));

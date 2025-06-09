@@ -23,7 +23,7 @@ header {
 }
 
 .promo-banner {
-    background-color: var(--light-blue);
+    background-color: var(--sky-blue);
     padding: 10px 20px;
     display: flex;
     position: relative;
@@ -58,7 +58,7 @@ header {
 .search-bar {
     width: 100%;
     max-width: 700px;
-    background: #ddd;
+    background: var(--grey-back);
     border-radius: 1.5rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     overflow: hidden;

@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize main image
+    /*Initialise Main Image*/
     updateMainImage(0);
 
 

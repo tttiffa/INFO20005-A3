@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (query === 'primer') {
       window.location.href = '../pages/listofproduct.html';
     } else {
-         window.location.href = `../homepage.html?q=${encodeURIComponent(query)}`;
+         window.location.href = `../index.html?q=${encodeURIComponent(query)}`;
     }
 });
 });

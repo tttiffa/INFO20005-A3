@@ -623,7 +623,7 @@ table.cart-table tbody td.qty-cell {
   }
 
    .qty-cell .qty-control {
-    background-color: #E3F1FF;
+    background-color: white;
     padding: 0.25rem 0.25rem;
     border-radius: 1rem;
   }
@@ -644,8 +644,8 @@ table.cart-table tbody td.qty-cell {
 
 .recommend-section {         
     padding: 2rem 0;
-    border-top: 2px solid #ffffff;     
-    border-bottom: 2px solid #ffffff; 
+    border-top: 2px solid white;     
+    border-bottom: 2px solid white; 
     width: 100%;
     height: auto;
   }
