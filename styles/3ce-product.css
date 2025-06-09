@@ -49,6 +49,7 @@ html,body{
   gap: 2rem;
   margin-top: 2rem;
 }
+
 .image-section {
   flex: 1;
   display: flex;
@@ -141,6 +142,7 @@ html,body{
 
 .product-des {
    padding: 3rem;
+   border: none;
 }
 
 .brand-name {
@@ -271,6 +273,11 @@ html,body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.wishlist-icon.favorited i.fa-heart,
+.wishlist-icon i.fa-solid.fa-heart {
+  color: var(--button-pink);
 }
 
 .buy-it-now {                  

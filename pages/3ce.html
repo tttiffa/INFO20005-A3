@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="../styles/3ce-product.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="../script/main.js" defer></script>
-<script src="../script/cart.js" defer></script>
 <script src="../script/productpage.js" defer></script>
+<script src="../script/wishlist.js" defer></script>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
             <div class="logo"><a href="../homepage.html">
             <img src="../images/W_Cosmetic_logo_White_Long.webp" alt="W Cosmetics Logo" class="logo-img"></a>
             </div>
-            <a href="../pages/wishlist.html" class="top-link heart-link"><i class="fas fa-heart"></i> <span>Wishlist</span></a>
+            <a id="openWishlist" class="top-link heart-link"><i class="fas fa-heart"></i> <span>Wishlist</span></a>
             <a href="../pages/cart.html" class="top-link cart-link"><i class="fas fa-shopping-cart"></i> <span>Shopping Cart</span></a>
     </div>
     </div>
@@ -108,6 +108,28 @@
 </div>
 </header>
 
+<div id="wishlistModal" class="modal">
+  <div id="wishlistBackdrop" class="modal-backdrop"></div>
+
+  <div class="modal-content">
+    <div class="breadcrumb">
+      <a href="../homepage.html" class="bc-home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <span class="bc-sep">&gt;</span>
+      <span class="bc-current">Wishlist</span>
+    </div>
+
+    <h2>WISHLIST</h2>
+    <div id="wishlistItems" class="wishlist-items">
+      <p>Your wishlist is empty!</p>
+    </div>
+
+    <button id="backToProduct" class="btn-back">BACK</button>
+  </div>
+</div>
+
+
     <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="../homepage.html" class="bc-home"><i class="fa-solid fa-house"></i></a>
     <span class="bc-sep">></span>
@@ -135,6 +157,13 @@
           </button>
         </div>
       </section>
+
+       <div class="product-card"
+       data-id="3CE"
+       data-name="Glow Beam 45ML"
+       data-price="38.00"
+       data-img="../Images/3ce-1.webp"
+       data-qty="1">
       
         <section class="product-des">
         <h1 class="brand-name">3CE</h1>
@@ -169,12 +198,13 @@
          This item is added to cart.
         </div>
 
-          <button class="wishlist-icon"><i class="fa-regular fa-heart"></i></button>
+          <button class="wishlist-icon" data-id="3CE" data-name="Glow Beam 45ML" data-price="38.00" data-img="../Images/3ce-1.webp"><i class="fa-regular fa-heart"></i></button>
           </div>
-          <a href="../pages/login.html" class="buy-it-now">BUY IT NOW</a>
+          <a href="#" class="buy-it-now">BUY IT NOW</a>
       </div>
-    </div>
+    </section>
+      </div>
   </main>
-   
+
 </body>
 </html>
