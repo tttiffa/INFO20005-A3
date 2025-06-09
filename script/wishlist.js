@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             />
             <button class="qty-btn" data-id="${i.id}" data-action="increase">+</button>
           </div>
-          <a href="../pages/cart.html" class="add-cart-btn">ADD TO CART</a>
+          <a class="add-cart-btn">ADD TO CART</a>
         </div>
       </div>
     `).join('');

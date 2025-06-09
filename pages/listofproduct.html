@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="../script/main.js" defer></script>
 <script src="../script/wishlist.js" defer></script>
+<script src="../script/filter.js" defer></script>
 </head>
 
 
@@ -26,7 +27,7 @@
         <div class="container">
             <a href="#mobileNav" class="top-link menu-icon"><i class="fas fa-bars"></i></a>
             <a href="../pages/login.html" class="top-link log-link"><i class="fa-regular fa-user"></i> <span>Log In/Sign Up</span></a>
-            <a href="../pages/locator.html" class="top-link map-link"><i class="fas fa-map-marker-alt"></i> <span>Store Locator</span></a>
+            <a href="#" class="top-link map-link"><i class="fas fa-map-marker-alt"></i> <span>Store Locator</span></a>
             <div class="logo"><a href="../homepage.html">
             <img src="../images/W_Cosmetic_logo_White_Long.webp" alt="W Cosmetics Logo" class="logo-img"></a>
             </div>
@@ -114,7 +115,6 @@
         <p>Face primer helps with the application and smoothness of face makeup and has health benefits for different types of skin.</p>
        </div>
       </div>
-</header>
 
 <div id="wishlistModal" class="modal">
   <div id="wishlistBackdrop" class="modal-backdrop"></div>
@@ -188,8 +188,7 @@
  <div class="filter-overlay" id="filterOverlay">
         <div class="filter-drawer">
       <button class="filter-close-btn" id="filterCloseButton">&times;</button>
-
-               <div class="filter-content">
+       <div class="filter-content">
         <div class="filter-header">Filter By:</div>
 
               <div class="filter-group">
@@ -211,7 +210,7 @@
               </div>
               <hr/>
               
-               <div class="filter-group">
+         <div class="filter-group">
           <h3 class="filter-group-title">Price</h3>
           <div class="price-range">
             <label>From</label>
@@ -262,7 +261,6 @@
           </div>
         </div>
     </div>
- </section>
 
   <main class="product-list">
       <div class="second-product-grid">
