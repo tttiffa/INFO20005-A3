@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
-    // —— 绑定数量按钮逻辑 —— 
+  /*quantity button logic*/
     listEl.querySelectorAll('.qty-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id     = btn.dataset.id;
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', () => modal.classList.remove('open'))
   );
 
-  // —— 收藏/取消收藏 —— 
+/*click heart/unclick*/
   document.querySelectorAll('.wishlist-icon').forEach(btn => {
     btn.addEventListener('click', () => {
       const icon = btn.querySelector('i');
@@ -80,10 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
         name:  card.dataset.name,
         price: card.dataset.price,
         img:   card.dataset.img,
-        qty:   parseInt(card.dataset.qty, 10) || 1    // 从 data-qty 读取并转为数字
+        qty:   parseInt(card.dataset.qty, 10) || 1    /*Read from the quantity*/
       };
 
-      // 切样式
       if (isAdd) {
         icon.classList.replace('fa-regular','fa-solid');
         btn.classList.add('favorited');

@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const input = document.getElementById('searchInput');
-    const suggestionsList = document.getElementById('suggestions-list');
+  const form            = document.querySelector('.search-bar');
+  const input           = document.getElementById('searchInput');
+  const suggestionsList = document.getElementById('suggestions-list');
+
 
     const suggestions = [
         'makeup > face > primer',
@@ -68,12 +70,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
       /*prevent directly submission when users pressed 'Enter' key, showing the first match*/
-
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.search-bar')) {
             suggestionsList.classList.remove('show');
         }
     });
+
+    form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+      const query = input.value.trim().toLowerCase();
+    if (query === 'primer') {
+      window.location.href = '../pages/listofproduct.html';
+    } else {
+         window.location.href = `../homepage.html?q=${encodeURIComponent(query)}`;
+    }
+});
 });
 /* Close the 'suggestion list' if users click anywhere else*/
 

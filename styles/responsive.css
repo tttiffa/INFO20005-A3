@@ -48,6 +48,38 @@
     order: 2;
 }
 
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    background-color: var(--breadcrumb-blue);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+.breadcrumb a, .bc-current {
+    display: inline-flex;
+    align-items: center;
+    color: black;
+}
+
+.breadcrumb .bc-home {
+    font-size: 1.6rem;
+}
+
+.breadcrumb .bc-sep {
+    margin: 0 0.7rem;
+    text-decoration: none;
+}
+
+.breadcrumb .bc-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .bc-current {
+    font-weight: 600;
+}
+
 :root {
   --topbar-height: 82px;
 }

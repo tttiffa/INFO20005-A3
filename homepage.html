@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
 <script src="script/main.js" defer></script>
+<script src="script/wishlist.js" defer></script>
 </head>
 
 <header>
@@ -24,7 +25,7 @@
             <div class="logo"><a href="homepage.html">
             <img src="images/W_Cosmetic_logo_White_Long.webp" alt="W Cosmetics Logo" class="logo-img"></a>
             </div>
-            <a href="pages/wishlist.html" class="top-link heart-link"><i class="fas fa-heart"></i> <span>Wishlist</span></a>
+            <a id="openWishlist" class="top-link heart-link"><i class="fas fa-heart"></i> <span>Wishlist</span></a>
             <a href="../pages/cart.html" class="top-link cart-link"><i class="fas fa-shopping-cart"></i> <span>Shopping Cart</span></a>
     </div>
     </div>
@@ -167,8 +168,28 @@
     </div>
    </nav> 
 
-
 </header>
+
+<div id="wishlistModal" class="modal">
+  <div id="wishlistBackdrop" class="modal-backdrop"></div>
+
+  <div class="modal-content">
+    <div class="breadcrumb">
+      <a href="../homepage.html" class="bc-home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <span class="bc-sep">&gt;</span>
+      <span class="bc-current">Wishlist</span>
+    </div>
+
+    <h2>WISHLIST</h2>
+    <div id="wishlistItems" class="wishlist-items">
+      <p>Your wishlist is empty!</p>
+    </div>
+
+    <button id="backToProduct" class="btn-back">BACK</button>
+  </div>
+</div>
 
 <main>
     <section class="hero-section">
